@@ -1,0 +1,18 @@
+$primary-color : #eae9e4;
+$secondary-color : #53389E;
+$tertiary-color : rgba(134, 46, 111, 0.469);
+
+@import './partials/main';
+
+
+
+body{
+    background-color: $primary-color;
+    margin: 0 auto;
+}
+div#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
