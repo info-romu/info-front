@@ -1,0 +1,101 @@
+
+@mixin form($form_width) {
+    width: $form_width;
+    .alert {
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+    label{
+        color: #fff;
+    }
+    .inputBox {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px;
+        margin-bottom: 18px;
+        &_input {
+            position: relative;
+            outline: none;
+            border: none;
+            padding: 11px 5px;
+            font-size: 1rem;
+            line-height: 1.5;
+            background-color: #fff;
+            background-clip: padding-box;
+        }
+        #toggleBtn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            width: 34px;
+            height: 34px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #toggleBtn::before {
+            content: '\f06e';
+            font-family: fontAwesome; 
+        }
+        #toggleBtn.hide::before {
+            content: '\f070';
+        }
+    }
+    .validation {
+        background-color: rgba(134, 46, 111, 0.469);
+        padding: 10px;
+        margin-top: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 10px;
+        &_list {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 0;
+            li {
+                position: relative;
+                list-style: none;
+                font-size: 0.90em;
+                transition: 0.5s;
+                color: $primary-color;
+            }
+            li.valid {
+                color: #0f0;
+            }
+            li.valid::before {
+                content: '\f00c';
+                color: #0f0;
+            }
+            li::before {
+                content:'\f192';
+                color: $primary-color;
+                width: 20px;
+                height: 10px;
+                font-family: fontAwesome;
+                display: inline-flex;
+            }
+        }
+    }
+    .form-btn {
+        margin-top: 12px;
+    }    
+    .txt-noaccount {
+        color: white;
+    }
+
+    .link-login {
+        color: aliceblue;
+    }
+}
