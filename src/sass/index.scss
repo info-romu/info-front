@@ -1,8 +1,17 @@
 $primary-color : #eae9e4;
-$secondary-color : #53389E;
-$tertiary-color : rgba(134, 46, 111, 0.469);
+$secondary-color : #2AA700;
+$tertiary-color : #108A00;
+$primary-font : #108A00;
+$secondary-font : #108A00;
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @import './partials/main';
+@import './partials/navbar';
 
 
 
@@ -14,5 +23,8 @@ div#root {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
+    min-height: 150vh;
+}
+h1{
+    color: $secondary-color;
 }
