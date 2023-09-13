@@ -1,4 +1,4 @@
-$primary-color : #eae9e4;
+$primary-color : #fff;
 $secondary-color : #2AA700;
 $tertiary-color : #108A00;
 $primary-font : #108A00;
@@ -27,6 +27,7 @@ div#root {
 }
 h1{
     color: $secondary-color;
+    font-size: 2.2em;
 }
 h2{
     font-size: 2em;
