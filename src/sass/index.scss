@@ -23,8 +23,11 @@ div#root {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 150vh;
+    min-height: 100vh;
 }
 h1{
     color: $secondary-color;
+}
+h2{
+    font-size: 2em;
 }
