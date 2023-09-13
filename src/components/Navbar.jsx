@@ -10,8 +10,8 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
-      <nav className="mx-auto flex items-center justify-between py-4 px-4 lg:px-2 bg-white" aria-label="Global">
+    <header>
+      <nav className="mx-auto flex items-center justify-between py-4 px-4 lg:px-2" aria-label="Global">
       <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-12">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Accueil
