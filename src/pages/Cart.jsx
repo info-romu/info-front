@@ -19,7 +19,7 @@ const Cart = () => {
             setItems(data);
           })
           .catch((error) => {
-            console.error("Erreur lors de la récupération des propriétés :", error);
+            console.error("Erreur lors de la récupération des items du pannier :", error);
           });
       }, []);
 

@@ -59,11 +59,12 @@ const Login= () => {
           const authorizationHeader = response.headers.get('authorization');
           if (authorizationHeader) {
             const token = authorizationHeader.split('Bearer ')[1];
-            setUserState({ isLogged: true });
+            setUserState({isLogged: true })
             navigate('/')
             Cookies.set('token', token);
             Cookies.set('id', userId);
-
+            Cookies.set('username', userDataResponse.user.username);
+            Cookies.set('email', userDataResponse.user.email);
             console.log('Connexion réussie !');
           }    
           setEmail('');
