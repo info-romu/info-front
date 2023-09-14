@@ -143,30 +143,35 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Accueil
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/services"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Nos services
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/realisations"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Nos Réalisations
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/market_place"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Notre boutique
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
@@ -177,22 +182,27 @@ export default function Example() {
                 {user.isLogged ? (
                   <>
                     <Link
+                    onClick={() => setMobileMenuOpen(false)}
                     to="/cart"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       Votre Panier
                     </Link>
                     <Link
+                    onClick={() => setMobileMenuOpen(false)}
                     to="/profile"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       Espace client
                     </Link>
-                    <Logout className={"-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"}/>
+                    <div onClick={() => setMobileMenuOpen(false)}>
+                      <Logout  className={"-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"}/>
+                    </div>
                   </>
                 ) : (
                   <>
                     <Link
+                    onClick={() => setMobileMenuOpen(false)}
                     to="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
