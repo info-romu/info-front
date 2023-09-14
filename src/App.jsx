@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Cart from './pages/Cart';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import MarketPlace from "./pages/MarketPlace";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from './atom';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />}/>
+          <Route path="/market_place" element={<MarketPlace />} />
         </Routes>
       </main>
       <Footer />
