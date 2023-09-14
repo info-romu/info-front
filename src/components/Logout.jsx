@@ -2,19 +2,28 @@ import React from 'react'
 import { useAtom } from 'jotai'
 import { userAtom } from '../atom'
 import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 
-export default function logout() {
+export default function Logout(props) {
     const [, setUserState] = useAtom(userAtom)
 
     const handleLogout = () => {
-        setUserState({ isLogged: false });
+      setUserState({isLogged: false });
         Cookies.remove('token');
         Cookies.remove('id');
+        Cookies.remove('username');
+        Cookies.remove('email');
         console.log('vous etes déconnecter');
     };
   
   
     return (
-    <button className='btn-logout' onClick={handleLogout}>Se Déconnecter</button>
+        <Link
+          onClick={handleLogout}
+          href="#"
+          className={props.className}
+        >
+          Déconnexion
+        </Link>
   )
 }

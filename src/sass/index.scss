@@ -32,3 +32,9 @@ h1{
 h2{
     font-size: 2em;
 }
+
+.cart::before {
+    content: '\f07a';
+    font-family: fontAwesome;
+    font-size: large;
+}

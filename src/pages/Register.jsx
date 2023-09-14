@@ -119,7 +119,8 @@ const Registrer= () => {
             const token = authorizationHeader.split('Bearer ')[1];
             Cookies.set('token', token);
             Cookies.set('id', userId);
-      
+            Cookies.set('username', userDataResponse.user.username);
+            Cookies.set('email', userDataResponse.user.email);
             setUserState({ isLogged: true });
             navigate('/')
             console.log('Inscription réussie !');
