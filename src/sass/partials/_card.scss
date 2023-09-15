@@ -100,7 +100,7 @@
     transition: background-color 0.3s ease-in-out;
   }
   
-  button:hover {
+  .button_addtocart:hover {
     color: white;
     background-color: $secondary-color; /* Couleur de fond du bouton au survol */
   }
