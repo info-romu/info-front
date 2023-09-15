@@ -12,6 +12,13 @@ $secondary-font : #108A00;
 
 @import './partials/main';
 @import './partials/navbar';
+@import './partials/caroussel';
+@import './partials/popup';
+
+@font-face {
+    font-family: 'Varela';
+    src: url(fonts/VarelaRound-Regular.ttf);
+}
 
 
 
