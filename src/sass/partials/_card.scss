@@ -76,18 +76,22 @@
     margin-top: auto;
   }
   
-  h6 {
+  .Item_name {
     font-size: 18px;
     margin: 0;
   }
   
-  p {
+  .Item_description {
     font-size: 14px;
     color: grey;
     margin: 8px 0;
   }
+
+  .Item_price {
+    font-weight: bold;
+  }
   
-  button {
+  .button_addtocart {
     color: #fff; /* Couleur du texte du bouton */
     padding: 10px 20px;
     border: solid $secondary-color;
@@ -96,7 +100,7 @@
     transition: background-color 0.3s ease-in-out;
   }
   
-  button:hover {
+  .button_addtocart:hover {
     color: white;
     background-color: $secondary-color; /* Couleur de fond du bouton au survol */
   }
