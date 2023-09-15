@@ -19,14 +19,12 @@ useEffect(() => {
 
 return (
   <>
-
-  <h2>Notre Boutique</h2>
-
-<div>
+    <h2>Notre Boutique</h2>
+      <div>
         {items.map((item) => (
           <Card key={item.id} item={item} />
         ))}
       </div>
-      </>
-);
-        }
+  </>
+  );
+}

@@ -1,26 +1,102 @@
-
-@mixin card () {
-
-.card_container {
-  width: 1100px;
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 15px;
-  margin: 0 auto;
-}
-
-&_body {
-
-  position: relative;
-  width: 300px;
-  height: 400px;
-  margin: 0 auto;
-  background: white;
-  transition: 0.5s;
-}
-
-&_body:hover {
-  box-shadow: 0 30px 50px rgba(0,0,0,.2);
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'nunito', sans-serif;
 
 }
+  .card {
+    width: 1100px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+    &_body {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 0 auto;
+      background: white;
+      transition: 0.5s;
+    }
+    &_body:hover {
+      box-shadow: 0 30px 50px rgba(0,0,0,.2);
+    }
+  }
+
+  .card .card_body .card_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card .card_body .card_face.face1{
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    color: black;
+  }
+  .card .card_body .card_face.face1 h6{
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+
+  .card .card_body .card_face.face2 {
+    transition: 0.5s;
+  }
+  
+  .card .card_body:hover .card_face.face2 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .card .card_body .card_face.face2 img {
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+  }
+  
+  .card .card_body:hover .card_face.face2 img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .card_content {
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  h6 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 14px;
+    color: grey;
+    margin: 8px 0;
+  }
+  
+  button {
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 10px 20px;
+    border: solid $secondary-color;
+    color: $secondary-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    color: white;
+    background-color: $secondary-color; /* Couleur de fond du bouton au survol */
+  }
