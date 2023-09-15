@@ -72,8 +72,9 @@ export default function Caroussel() {
             <SwiperSlide key={i} style={{ backgroundImage: `url(${data.url})` }} className="swiper-slider">
                 <div>
                     <h2>{data.title}</h2>
-                    <p>{data.description}</p>
-                    <button onClick={() => openPopUp(data.title, data.description)} className='btn-show-service'>Parcourir</button>
+                    <button onClick={() => openPopUp(data.title, data.description)} className='btn-show-service'>
+                      <span className='span-btn'>Parcourir</span>
+                    </button>
                 </div>
             </SwiperSlide>
           ))
