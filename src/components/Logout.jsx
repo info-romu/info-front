@@ -20,7 +20,7 @@ export default function Logout(props) {
     return (
         <Link
           onClick={handleLogout}
-          href="#"
+          to="/"
           className={props.className}
         >
           Déconnexion
