@@ -1,0 +1,141 @@
+.caroussel {
+    position: relative;
+    width: calc(min(1440px, 90%));
+    margin: 0 auto;
+    min-height: 100vh;
+    column-gap: 48px;
+    padding-block: min(20vh, 48px);
+
+    h1 {
+        text-transform: capitalize;
+        font-family: 'Varela';
+        font-size: 60px;
+        letter-spacing: 0.6;
+        background: rgb(255,255,255);
+        background: linear-gradient(85deg, rgba(255,255,255,1) 0%, rgba(143,194,148,1) 0%, rgba(89,172,92,1) 7%, rgba(54,152,59,1) 61%, rgba(11,134,20,1) 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100%;
+    }
+
+    hr {
+        display: block;
+        background: #008a05;
+        height: 0.25rem;
+        width: 6.25rem;
+        border: none;
+        margin: 1.125rem 0 1.875rem 0;
+    }
+
+    p {
+        line-height: 1.6;
+        font-family: 'Varela';
+    }
+
+    .btn-contact-service{
+        display: inline-block;
+        color: #000000;
+        background: #fff;
+        width: 250px;
+        padding: 0.625rem 1.875rem;
+        margin-top: 2.125rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 2px solid #000000;
+        border-radius: 3.125rem;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .btn-contact-service:hover {
+        border: 0.125rem solid #6de46f;
+        color: #00aa22;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 550px;
+    // border: 1px blue solid;
+}
+
+.swiper-slider {
+    width: 100%;
+    height: 28rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3.125rem;
+    // border: 1px red solid;
+    
+    h2 {
+        color: #fff;
+        font-size: 40px;
+        line-height: 1.4;
+        letter-spacing: 0.8px;
+        margin-bottom: 0.625rem;
+        padding: 0 0 0 1.263rem;
+        text-transform: uppercase;
+    }
+    
+    p {
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.4;
+        letter-spacing: 0.8px;
+        margin-bottom: 0.95rem;
+        padding: 0 0 0 1.2rem;
+    }
+    
+    div {
+        display: none;
+        opacity: 0;
+        padding-bottom: 20px;
+    }
+    
+    &.swiper-slide-active div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        opacity: 1;
+        height: 100%;
+        border-radius: 3.125rem;
+    }
+
+    .btn-show-service {
+        display: inline-block;
+        font-family: 'Varela';
+        color: #000000;
+        background: #fff;
+        text-align: center;
+        width: 10rem;
+        height: 2.9rem;
+        margin-left: 1.2rem;
+        margin-bottom: 1.8rem;
+        padding: 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 0.20rem solid #000000;
+        border-radius: 3.125rem;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .btn-show-service:hover {
+        border: 0.35rem solid #6de46f;
+        color: #00aa22;
+    }
+    
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+        color: #00aa22;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .caroussel {
+        display: flex;
+        align-items: center;
+    }
+
+
+}
