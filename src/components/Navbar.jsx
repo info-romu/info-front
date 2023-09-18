@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Dialog } from '@headlessui/react'
 import { useAtom } from 'jotai';
 import { userAtom } from '../atom';
@@ -15,7 +15,8 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [user] = useAtom(userAtom);
   const [isOpen, setIsOpen] = useState(false);
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
+  const location = useLocation();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -28,20 +29,20 @@ export default function Example() {
 
   return (
     <header>
-      <nav className="mx-auto flex items-center justify-between py-4 px-4 lg:px-2" aria-label="Global">
-      <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7">
-          <Link to="/services" className="text-sm font-semibold leading-6 text-gray-900">
+      <nav className="nav-container mx-auto flex items-center justify-between py-4 px-4 lg:px-2" aria-label="Global">
+      <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7">
+      <Link to="/services" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/services' ? 'active-link' : ''}`}>
             Nos services
           </Link>
-          <Link to="/realisations" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/realisations" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/realisations' ? 'active-link' : ''}`}>
             Nos Réalisations
           </Link>
-          <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/contact" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/contact' ? 'active-link' : ''}`}>
               Nous contacter
           </Link>
-        </div>
-        <div className="flex justify-center lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+      </div>
+        <div className="nav-item-title flex justify-center lg:flex-1">
+          <Link to="/" className={`-m-1.5 p-1.5 ${location.pathname === '/' ? 'active-link-title' : ''}`}>
             <span className="sr-only">Inforomu.</span>
             <h1 className='text-2xl font-extrabold leading-none tracking-tight md:text-2xl lg:text-2xl'>Inforomu.</h1>
           </Link>
@@ -56,9 +57,8 @@ export default function Example() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7 items-center">
-
-            <Link to="/market_place" className="text-sm font-semibold leading-6 text-gray-900">
+          <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7 items-center">
+            <Link to="/market_place" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/market_place' ? 'active-link' : ''}`}>
               Notre boutique
             </Link>
             { user.isLogged ? (
@@ -69,7 +69,7 @@ export default function Example() {
               <button
                 id="dropdownInformationButton"
                 onClick={toggleDropdown}
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="btn-client-nav"
                 type="button"
               >
                 Espace Client
@@ -116,7 +116,7 @@ export default function Example() {
                 <button
                 onClick={NavigateToLogin}
                 id="dropdownInformationButton"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="btn-client-nav"
                 type="button"
                 >Espace Client</button>
             )}
