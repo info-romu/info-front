@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import imagesMarketPlace from '../data-images/marketplace.json'
 
 
 export default function MarketPlace() {
+  const imgData  = imagesMarketPlace.marketplace;
   const [items, setItems] = useState([]);
 
 useEffect(() => {
