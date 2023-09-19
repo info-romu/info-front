@@ -7,25 +7,38 @@
     padding-block: min(20vh, 48px);
 
     h1 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
         text-transform: capitalize;
         font-family: 'Varela';
         font-size: 60px;
         letter-spacing: 0.6;
-        background: rgb(255,255,255);
-        background: linear-gradient(85deg, rgba(255,255,255,1) 0%, rgba(143,194,148,1) 0%, rgba(89,172,92,1) 7%, rgba(54,152,59,1) 61%, rgba(11,134,20,1) 95%);
+        background: rgb(0, 157, 58);
+        background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: 100%;
-    }
-
-    hr {
-        display: block;
-        background: #008a05;
-        height: 0.25rem;
-        width: 6.25rem;
-        border: none;
-        margin: 1.125rem 0 1.875rem 0;
+        text-align: center;
+        margin-top: 1rem;
+    
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0.7rem;
+            width: 80%;
+            height: 0.2rem;
+            background-color: black;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
     }
 
     p {
@@ -33,23 +46,115 @@
         font-family: 'Varela';
     }
 
-    .btn-contact-service{
-        display: inline-block;
-        color: #000000;
-        background: #fff;
-        width: 250px;
-        padding: 0.625rem 1.875rem;
-        margin-top: 2.125rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        border: 2px solid #000000;
-        border-radius: 3.125rem;
-        transition: 0.3s ease-in-out;
+    .txt-intro-caroussel {
+        position: relative;
+        top: -4.3rem;
+        font-size: 1.2rem;
+    }
+
+    .txt-span-intro {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0.2rem;
+            width: 80%;
+            height: 0.2rem;
+            background: rgb(0, 157, 58);
+            background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+    }
+
+    .span-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: -3.8rem;
+        
     }
     
-    .btn-contact-service:hover {
-        border: 0.125rem solid #6de46f;
-        color: #00aa22;
+
+    .span-description-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 31rem;
+        height: 5rem;
+    }
+    
+    .span-description {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background: rgb(0, 157, 58);
+        background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 2.5rem;
+        flex-shrink: 0;
+    }
+    
+    .txt-span-description {
+        font-size: 1rem;
+        color: #000000;
+        flex-grow: 1;
+        padding: 0.6rem;
+        // border: 1px #00aa22 solid;
+    }
+
+    .btn-contact-service{
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 7rem;
+        font-family: 'Varela';
+        font-size: 1.2rem;
+        color: $secondary-color;
+        line-height: 1;
+        width: 12rem;
+        text-align: center;
+        padding: 1em 2em;
+        background: none;
+        border: 2px solid #20d600;
+        overflow: hidden;
+        border-radius: 1.5rem;
+        transition: background 0.25s, color 0.25s, border-color 0.25s;
+      
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgb(0, 157, 58);
+          background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
+          transform: scaleY(0); 
+          transform-origin: bottom;
+          transition: transform 0.25s ease-in-out;
+          z-index: -1;
+        }
+      
+        &:hover,
+        &:focus {
+          color: #fff;
+          border-color: #fff;
+          &::before {
+            transform: scaleY(1);
+          }
+        }
     }
 }
 
@@ -116,6 +221,7 @@
         background: none;
         border: 2px solid #fff;
         overflow: hidden;
+        border-radius: 1.5rem;
         transition: background 0.25s, color 0.25s, border-color 0.25s;
       
         &::before {
@@ -125,8 +231,8 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgb(255,255,255);
-          background: linear-gradient(85deg, rgba(255,255,255,1) 0%, rgba(143,194,148,1) 0%, rgba(89,172,92,1) 7%, rgba(54,152,59,1) 61%, rgba(11,134,20,1) 95%);
+          background: rgb(0, 157, 58);
+          background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
           transform: scaleY(0); 
           transform-origin: bottom;
           transition: transform 0.25s ease-in-out;
