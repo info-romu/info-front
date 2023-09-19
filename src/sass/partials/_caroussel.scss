@@ -50,6 +50,7 @@
         position: relative;
         top: -4.3rem;
         font-size: 1.2rem;
+        animation: fade-in-top .7s cubic-bezier(0.390, 0.575, 0.565, 1.000);
     }
 
     .txt-span-intro {
@@ -78,6 +79,7 @@
         justify-content: space-between;
         text-align: center;
         margin-top: -3.8rem;
+        animation: fade-in-bottom .7s cubic-bezier(0.390, 0.575, 0.565, 1.000);
         
     }
     
@@ -154,6 +156,32 @@
           &::before {
             transform: scaleY(1);
           }
+        }
+    }
+
+    @keyframes fade-in-top {
+        0% {
+            transform: translateY(-6rem);
+            opacity: 0;
+        }
+        50% {
+            transform: translateY(0);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fade-in-bottom {
+        0% {
+            transform: translateY(6rem);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
         }
     }
 }
