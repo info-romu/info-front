@@ -28,9 +28,28 @@ export default function Caroussel() {
     <div className='caroussel'>
       <div className='content-caroussel'>
         <h1 className='title-service'>Nos services.</h1>
-        <hr />
+        <div className='txt-intro-caroussel'>
         <p>Inforomu vous accompagne dans tout vos projets, vous trouverez ici tout les domaines dans lesquelles nous intervenons.</p>
-        <a href="#" className='btn-contact-service'>Nous contacter</a>
+        </div>
+        <div className='span-container'>
+          <div className='span-description-container'>
+            <span className='span-description'>1</span>
+            <p className='txt-span-description'>Rendez-vous technique afin de trouver la meilleur réponse possible à votre demande.</p>
+          </div>
+          <div className='span-description-container'>
+            <span className='span-description'>2</span>
+            <p className='txt-span-description'>Etudes du dossier et envoi du devis, planification du chantier si le devis est accepter.</p>
+          </div>
+          <div className='span-description-container'>
+            <span className='span-description'>3</span>
+            <p className='txt-span-description'>Installation & mise en services des produits grace a notre equipe de technicien.</p>
+          </div>
+          <div className='span-description-container'>
+            <span className='span-description'>4</span>
+            <p className='txt-span-description'>Nous ne vous abandonnons pas apres la pose ! Nous restons a votre entiere disposition, si vous avez des questions ou besoin d'une intervention ! </p>
+          </div>
+        </div>
+
       </div>
 
       <Swiper  
@@ -80,6 +99,11 @@ export default function Caroussel() {
           ))
         }
       </Swiper>
+      <div>
+      <button className='btn-contact-service'>
+        <span className='span-btn'>Nous contacter</span>
+      </button>
+      </div>
       <PopUp isOpen={popUpOpen} onClose={closePopUp} title={selectedData.title} description={selectedData.description}/>
     </div>
   )
