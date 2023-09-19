@@ -6,6 +6,12 @@ nav{
     z-index: 5;
     background-color: #ffffffa9;
 
+    .nav-item .cart::before {
+        content: '\f07a';
+        font-family: fontAwesome;
+        font-size: large;
+    }
+
     .nav-item a {
         text-decoration: none;
         color: #000000;
