@@ -1,25 +1,19 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   outline: none;
-//   font-family: 'nunito', sans-serif;
 
-// }
 .title-market{
   font-size: 3rem;
   margin-top: 50px;
   text-align: center;
+  font-weight: bold;
+  font-family: "nunito", sans-serif;
 }
 
   .card {
     width: 100%;
-
     margin: 0 auto;
     &_body {
       position: relative;
       width: 270px;
-      height: 350px;
+      height: 400px;
       margin: 0 auto;
       background: white;
       transition: 0.6s;
@@ -31,7 +25,7 @@
     &_container{
       display: grid; 
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      grid-gap: 15px;
+      grid-gap: 35px;
     }
   }
 
@@ -46,7 +40,6 @@
     align-items: center;
   }
   .card .card_body .card_face.face1{
-    box-sizing: border-box;
     padding: 20px;
     text-align: center;
     background: white;
@@ -54,7 +47,7 @@
   }
   .card .card_body .card_face.face1 h6{
     margin-top: 50px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .card .card_body .card_face.face2 {
@@ -65,11 +58,12 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    top: 40px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
   }
   .card .card_body .card_face.face2 img {
+    height: 65%;
     margin: 0;
     padding: 0;
     transition: 0.6s;
@@ -81,24 +75,23 @@
     border-radius: 50%;
   }
 
-  .card_content {
+  .item {
     text-align: center;
     margin-top: auto;
-  }
-  
-  .Item_name {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  .Item_description {
+
+    &_name {
+      font-size: 18px;
+      margin: 0;
+    }
+    &_description{
     font-size: 14px;
     color: grey;
     margin: 8px 0;
-  }
-
-  .Item_price {
-    font-weight: bold;
+    }
+    &_price {
+      font-weight: bold;
+      margin: auto;
+    }
   }
   
   .button_addtocart {
@@ -108,9 +101,9 @@
     color: $secondary-color;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    &:hover {
+      color: white;
+    background-color: $secondary-color; /* Couleur de fond du bouton au survol */
+    }
   }
   
-  .button_addtocart:hover {
-    color: white;
-    background-color: $secondary-color; /* Couleur de fond du bouton au survol */
-  }
