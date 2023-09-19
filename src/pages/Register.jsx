@@ -147,7 +147,7 @@ const Registrer= () => {
     };
 
     return (
-      <section>
+      <section className='form_section'>
         <div className='box'>
             <h2>Inscription</h2>
             <form className='box_form' onSubmit={handleSubmit}>

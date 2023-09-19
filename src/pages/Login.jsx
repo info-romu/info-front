@@ -82,7 +82,7 @@ const Login= () => {
     };
 
     return (
-      <section>
+      <section className='section_form'>
         <div className='box'>
         <h2>Connexion</h2>
         <form className='box_form' onSubmit={handleSubmit}>
@@ -100,6 +100,8 @@ const Login= () => {
                     placeholder='Email'
                     value={email}
                     onChange={handleEmailChange}
+                    minLength={3}
+                    maxLength={30}
                     required
                 />
             </div>
@@ -112,6 +114,8 @@ const Login= () => {
                     placeholder='Mot de passe'
                     value={password}
                     onChange={handlePasswordChange}
+                    minLength={8}
+                    maxLength={50}
                     required
                 />
                 <span id='toggleBtn' onClick={handlePasswordHide}></span>
