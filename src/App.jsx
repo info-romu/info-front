@@ -16,6 +16,7 @@ import Services from './components/Services';
 import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import Success from './pages/Success';
 
 const stripePromise = loadStripe('pk_test_51N9WNvKEgZiwtZMaFKqMHEyc3ZbjMCqmfQCoc4Hlh4j8QIR2Po4TYJCwvc9nmCJxveEqztG8XohpTVnxkNH8g1yE00E2Jcdwyr');
 
