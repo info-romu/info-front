@@ -12,6 +12,13 @@ import { userAtom } from './atom';
 import Cookies from 'js-cookie';
 import Services from './components/Services';
 import PopUp from './components/PopUp';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Success from './pages/Success';
+
+const stripePromise = loadStripe(
+  "pk_test_51N8qrpHWNoe0qekSPWRTxOgeegPPWK0iiMouWvYSv2apDMHssbZ2Urto4WLAovhtDWwLauJoU7xmFClaFdVPfqnT00B07uE0BP"
+);
 
 function App() {
   const [, setUser] = useAtom(userAtom);
@@ -34,10 +41,18 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/cart" element={<Cart />}/>
           <Route path="/market_place" element={<MarketPlace />} />
           <Route path="/services" element={<Services />} />
           <Route path="/popup" element={<PopUp />} />
+          <Route path="/success" element={<Success/>} />
+          <Route
+            path='/cart'
+            element={
+              <Elements stripe={stripePromise}>
+                <Cart />
+              </Elements>
+            }
+          />
         </Routes>
       </main>
       <Footer />
