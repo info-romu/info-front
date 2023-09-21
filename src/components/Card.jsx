@@ -1,14 +1,15 @@
 import React from "react";
 import Cookies from 'js-cookie';
+import config from '../../config'
+
 
 
 const Card = ({ item }) => {
 
   const addToCart = (itemId) => {
     const userId = Cookies.get('id')
-    console.log(itemId);
     
-    fetch(`http://127.0.0.1:3000/cart_items`, {
+    fetch(`${config.API_BASE_URL}/cart_items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,18 +36,14 @@ const Card = ({ item }) => {
   return (
     <div className="card">
       <div className="card_body">
-        <div className="card_face face1">
           <div className="item">
+            <img className="item_img" alt="ici la photo" src={item.imageUrl} />
             <h6 className="item_name">{item.name}</h6>
             <p className="item_description">{item.description}</p>
             <p className="item_price">Prix: {item.price} €</p>
             <button onClick={() => addToCart(item.id)} className="button_addtocart">
              Ajouter au panier</button>
           </div>
-        </div>
-        <div className="card_face face2">
-        <img alt="ici la photo" src={item.imageUrl} />
-        </div>       
       </div>
     </div>
   );
