@@ -18,7 +18,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
 
-const stripePromise = loadStripe('pk_test_51N9WNvKEgZiwtZMaFKqMHEyc3ZbjMCqmfQCoc4Hlh4j8QIR2Po4TYJCwvc9nmCJxveEqztG8XohpTVnxkNH8g1yE00E2Jcdwyr');
+const stripePromise = loadStripe('pk_test_51N8qrpHWNoe0qekSPWRTxOgeegPPWK0iiMouWvYSv2apDMHssbZ2Urto4WLAovhtDWwLauJoU7xmFClaFdVPfqnT00B07uE0BP');
 
 function App() {
   const [, setUser] = useAtom(userAtom);
