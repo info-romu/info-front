@@ -1,14 +1,15 @@
 import React from "react";
 import Cookies from 'js-cookie';
+import config from '../../config'
+
 
 
 const Card = ({ item }) => {
 
   const addToCart = (itemId) => {
     const userId = Cookies.get('id')
-    console.log(itemId);
     
-    fetch(`http://127.0.0.1:3000/cart_items`, {
+    fetch(`${config.API_BASE_URL}/cart_items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -4,7 +4,7 @@ import { useAtom } from 'jotai';
 import { userAtom } from '../atom';
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
-
+import config from "../../config";
 
 
 const Login= () => {
@@ -44,7 +44,7 @@ const Login= () => {
       const userData = { user: { email, password } };
     
       try {
-        const response = await fetch('http://127.0.0.1:3000/users/sign_in', {
+        const response = await fetch(`${config.API_BASE_URL}/users/sign_in`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

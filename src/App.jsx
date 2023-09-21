@@ -17,8 +17,10 @@ import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
+import config from '../config'
 
-const stripePromise = loadStripe('pk_test_51N8qrpHWNoe0qekSPWRTxOgeegPPWK0iiMouWvYSv2apDMHssbZ2Urto4WLAovhtDWwLauJoU7xmFClaFdVPfqnT00B07uE0BP');
+const apiKey = config.STRIPE_PUBLIC_KEY;
+const stripePromise = loadStripe(apiKey);
 
 function App() {
   const [, setUser] = useAtom(userAtom);
