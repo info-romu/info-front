@@ -8,7 +8,7 @@ import Cart from './pages/Cart';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from './atom';
 import Cookies from 'js-cookie';
@@ -18,6 +18,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
 import config from '../config'
+import DashboardAdmin from './pages/DashboardAdmin';
 
 const apiKey = config.STRIPE_PUBLIC_KEY;
 const stripePromise = loadStripe(apiKey);
@@ -25,7 +26,6 @@ const stripePromise = loadStripe(apiKey);
 function App() {
   const [, setUser] = useAtom(userAtom);
   const options = {
-    // passing the client secret obtained from the server
     clientSecret: '{{CLIENT_SECRET}}',
   };
 
@@ -39,6 +39,11 @@ function App() {
     }
   }, []);
 
+    const hasAdminRole = () => {
+      const role = Cookies.get('admin');
+      return role === 'true';
+    };
+  
   return (
     <Elements stripe={stripePromise} options={options}>
       <CheckoutForm />
@@ -52,6 +57,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/market_place" element={<MarketPlace />} />
           <Route path="/services" element={<Services />} />
+          {hasAdminRole() ? (
+            <Route path="/dashboard" element={<DashboardAdmin />} />
+          ) : (
+            <Route
+              path="/dashboard"
+              element={<Navigate to="/" />}
+            />
+          )}       
           <Route path="/popup" element={<PopUp />} />
           <Route path="/success" element={<Success/>} />
           <Route
