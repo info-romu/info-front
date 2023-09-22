@@ -17,11 +17,9 @@ import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
-import config from '../config'
 import DashboardAdmin from './pages/DashboardAdmin';
 
-const apiKey = config.STRIPE_PUBLIC_KEY;
-const stripePromise = loadStripe(apiKey);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 function App() {
   const [, setUser] = useAtom(userAtom);
