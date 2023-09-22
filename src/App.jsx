@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
+import Profile from "./pages/Profile";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from './atom';
@@ -54,6 +55,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/market_place" element={<MarketPlace />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/services" element={<Services />} />
           {hasAdminRole() ? (
             <Route path="/dashboard" element={<DashboardAdmin />} />
