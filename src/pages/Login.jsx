@@ -65,6 +65,7 @@ const Login= () => {
             Cookies.set('id', userId);
             Cookies.set('username', userDataResponse.user.username);
             Cookies.set('email', userDataResponse.user.email);
+            Cookies.set('admin', userDataResponse.user.is_admin);
             console.log('Connexion réussie !');
           }    
           setEmail('');
