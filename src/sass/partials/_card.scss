@@ -20,7 +20,7 @@
     &_body {
       position: relative;
       width: 270px;
-      height: 420px;
+      height: auto;
       margin: 0 auto;
       background: white;
       padding: 20px;
@@ -37,13 +37,19 @@
 
   .item {
     text-align: center;
-    &_img {
-      max-width: 100%;
-      height: auto;
-      width: 50%;
+    &_container {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      border: 3px solid $secondary-color;
       display: inline-block;
-      margin-bottom: 20px;
+      overflow: hidden; 
+      &_img {
+        height: 100%;
+        transform: scale(0.95); 
     }
+    }
+   
     &_name {
       font-size: 20px;
       margin: 0;

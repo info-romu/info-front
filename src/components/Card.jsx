@@ -37,7 +37,9 @@ const Card = ({ item }) => {
     <div className="card">
       <div className="card_body">
           <div className="item">
-            <img className="item_img" alt="ici la photo" src={item.imageUrl} />
+            <div className="item_container">
+            <img className="item_container_img" alt="ici la photo" src={item.imageUrl} />
+            </div>
             <h6 className="item_name">{item.name}</h6>
             <p className="item_description">{item.description}</p>
             <p className="item_price">Prix: {item.price} €</p>
