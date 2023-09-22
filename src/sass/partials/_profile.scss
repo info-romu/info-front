@@ -1,0 +1,33 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  &_content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+.sidebar {
+  margin: 100px;
+  border: 3px solid $secondary-color;
+  border-radius: 20px;
+  background-color:white;
+  color: black;
+  width: 250px;
+  padding: 16px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.dashbord-content {
+  flex: 1;
+  padding: 16px;
+}
