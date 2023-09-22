@@ -13,6 +13,7 @@ export default function Logout(props) {
         Cookies.remove('id');
         Cookies.remove('username');
         Cookies.remove('email');
+        Cookies.remove('admin');
         console.log('vous etes déconnecter');
     };
   

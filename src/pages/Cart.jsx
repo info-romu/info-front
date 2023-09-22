@@ -1,22 +1,55 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { Link } from "react-router-dom";
+import { useStripe } from "@stripe/react-stripe-js";
+import config from "../../config";
 
 const Cart = () => {
   const [Items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
 
+  const stripe = useStripe();
+
+  const handleCheckout = async () => {
+    try {
+      const token = Cookies.get("token");
+      const response = await fetch(`${config.API_BASE_URL}/create_stripe_session`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const responseData = await response.json();
+
+      console.log("Stripe response data : ");
+      console.log(responseData);
+
+      const result = await stripe.redirectToCheckout({
+        sessionId: responseData.session_id,
+      });
+
+      if (result.error) {
+        console.error(result.error.message);
+      } else {
+        localStorage.setItem("paymentSuccess", "true");
+      }
+    } catch (error) {
+      console.error("An error occurred during checkout: ", error);
+    }
+  };
+
   useEffect(() => {
     const token = Cookies.get('token');
 
-    fetch("http://127.0.0.1:3000/cart_items", {
+    fetch(`${config.API_BASE_URL}/cart_items`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())
       .then((data) => {
-        //console.log(data);
         setItems(data);
         const calculatedTotal = calculateTotal(data);
         setTotal(calculatedTotal);
@@ -34,7 +67,7 @@ const Cart = () => {
 
   const removeItemFromCart = (itemId) => {
     const token = Cookies.get('token');
-    fetch(`http://127.0.0.1:3000/cart_items/${itemId}`, {
+    fetch(`${config.API_BASE_URL}/cart_items/${itemId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -42,7 +75,6 @@ const Cart = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        //console.log(data);
         setItems(data);
         const calculatedTotal = calculateTotal(data);
         setTotal(calculatedTotal);
@@ -117,7 +149,7 @@ const Cart = () => {
                   <p className="text-sm text-gray-700">TVA Incluse</p>
                 </div>
               </div>
-              <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Acheter</button>
+              <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600" onClick={handleCheckout}>Acheter</button>
             </div>
           </>
         )}

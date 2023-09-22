@@ -1,4 +1,5 @@
 import VitePluginSass from 'vite-plugin-sass';
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   content: [
@@ -7,6 +8,10 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    screens: {
+      'xs': '570px',
+      ...defaultTheme.screens,
+    },
     extend: {},
   },
   plugins: [

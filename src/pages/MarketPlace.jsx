@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
-
+import config from "../../config";
 
 
 export default function MarketPlace() {
   const [items, setItems] = useState([]);
 
 useEffect(() => {
-  fetch("http://127.0.0.1:3000/items")
+  fetch(`${config.API_BASE_URL}/items`)
     .then((response) => response.json())
     .then((data) => {
       setItems(data);

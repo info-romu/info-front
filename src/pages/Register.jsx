@@ -3,6 +3,8 @@ import { useAtom } from 'jotai';
 import { userAtom } from '../atom';
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
+import config from "../../config";
+
 
 
 
@@ -102,7 +104,7 @@ const Registrer= () => {
       const userData = { user: { email, password, username } };
     
       try {
-        const response = await fetch('http://127.0.0.1:3000/users', {
+        const response = await fetch(`${config.API_BASE_URL}/users`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
