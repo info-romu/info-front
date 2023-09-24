@@ -1,0 +1,34 @@
+{
+    "slider": [
+      {
+        "title": "Particuliers",
+        "description": "Description de l'image 1",
+        "url": "https://i.postimg.cc/zXj6CssP/image5.jpg"
+      },
+      {
+        "title": "Image 2",
+        "description": "Description de l'image 2",
+        "url": "https://i.postimg.cc/dtvgTsxy/image2.jpg"
+      },
+      {
+        "title": "Image 3",
+        "description": "Description de l'image 3",
+        "url": "https://i.postimg.cc/KctdzkJb/image3.jpg"
+      },
+      {
+        "title": "Image 4",
+        "description": "Description de l'image 4",
+        "url": "https://i.postimg.cc/j269kmL2/image4.jpg"
+      },
+      {
+        "title": "Image 5",
+        "description": "Description de l'image 5",
+        "url": "https://i.postimg.cc/zXj6CssP/image5.jpg"
+      },
+      {
+        "title": "Image 6",
+        "description": "Description de l'image 6",
+        "url": "https://i.postimg.cc/D03H6nfR/image6.jpg"
+      }
+    ]
+  }

@@ -1,0 +1,44 @@
+.container_presentation {
+    position: relative;
+
+    &_img {
+        width: 100%;
+        min-height: 60vh;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 3%;
+    }
+
+    &_text {
+        position: absolute;
+        top: 4%;
+        right: 30%;
+    }
+}
+
+.container_description {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .container_top {
+        &_text {
+            font-size: 1.5em;
+            padding-bottom: 50px;
+        }
+    }
+
+    .container_bottom {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+
+        &_button {
+            border: black 1px solid;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    }
+}
