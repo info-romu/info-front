@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import CheckoutForm from './components/CheckoutForm';
 import Cart from './pages/Cart';
 import Login from "./pages/Login";
+import Realisation from './pages/Realisation';
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
 import Profile from "./pages/Profile";
@@ -58,6 +59,7 @@ function App() {
           <Route path="/market_place" element={<MarketPlace />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/realisations" element={<Realisation />} />
           {hasAdminRole() ? (
             <Route path="/dashboard" element={<DashboardAdmin />} />
           ) : (
