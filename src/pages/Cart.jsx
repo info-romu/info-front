@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { Link } from "react-router-dom";
 import { useStripe } from "@stripe/react-stripe-js";
+import config from "../../config";
 
 const Cart = () => {
   const [Items, setItems] = useState([]);
@@ -13,7 +14,7 @@ const Cart = () => {
   const handleCheckout = async () => {
     try {
       const token = Cookies.get("token");
-      const response = await fetch(`http://127.0.0.1:3000/create_stripe_session`, {
+      const response = await fetch(`${config.API_BASE_URL}/create_stripe_session`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -42,7 +43,7 @@ const Cart = () => {
   useEffect(() => {
     const token = Cookies.get('token');
 
-    fetch("http://127.0.0.1:3000/cart_items", {
+    fetch(`${config.API_BASE_URL}/cart_items`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -66,7 +67,7 @@ const Cart = () => {
 
   const removeItemFromCart = (itemId) => {
     const token = Cookies.get('token');
-    fetch(`http://127.0.0.1:3000/cart_items/${itemId}`, {
+    fetch(`${config.API_BASE_URL}/cart_items/${itemId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -74,7 +75,6 @@ const Cart = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        //console.log(data);
         setItems(data);
         const calculatedTotal = calculateTotal(data);
         setTotal(calculatedTotal);

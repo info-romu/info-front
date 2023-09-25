@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import Cookies from 'js-cookie';
+import config from "../../config";
+
 
 export default function Success() {
 
   useEffect(() => {
     try {
       const token = Cookies.get("token");
-      const response = fetch(`http://127.0.0.1:3000/success`, {
+      const response = fetch(`${config.API_BASE_URL}/success`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

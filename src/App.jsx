@@ -8,7 +8,8 @@ import Cart from './pages/Cart';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from "./pages/Profile";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from './atom';
 import Cookies from 'js-cookie';
@@ -18,13 +19,13 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
 import Contact from './pages/Contact';
+import DashboardAdmin from './pages/DashboardAdmin';
 
-const stripePromise = loadStripe('pk_test_51N8qrpHWNoe0qekSPWRTxOgeegPPWK0iiMouWvYSv2apDMHssbZ2Urto4WLAovhtDWwLauJoU7xmFClaFdVPfqnT00B07uE0BP');
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 function App() {
   const [, setUser] = useAtom(userAtom);
   const options = {
-    // passing the client secret obtained from the server
     clientSecret: '{{CLIENT_SECRET}}',
   };
 
@@ -38,6 +39,11 @@ function App() {
     }
   }, []);
 
+    const hasAdminRole = () => {
+      const role = Cookies.get('admin');
+      return role === 'true';
+    };
+  
   return (
     <Elements stripe={stripePromise} options={options}>
       <CheckoutForm />
@@ -50,7 +56,16 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/market_place" element={<MarketPlace />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/services" element={<Services />} />
+          {hasAdminRole() ? (
+            <Route path="/dashboard" element={<DashboardAdmin />} />
+          ) : (
+            <Route
+              path="/dashboard"
+              element={<Navigate to="/" />}
+            />
+          )}       
           <Route path="/popup" element={<PopUp />} />
           <Route path="/success" element={<Success/>} />
           <Route path="/contact" element={<Contact />} />

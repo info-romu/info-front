@@ -17,6 +17,9 @@ dependencies:
   '@stripe/stripe-js':
     specifier: ^2.1.6
     version: 2.1.6
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
   flowbite:
     specifier: ^1.8.1
     version: 1.8.1
@@ -930,6 +933,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /easy-bem@1.1.1:
     resolution: {integrity: sha512-GJRqdiy2h+EXy6a8E6R+ubmqUM08BK0FWNq41k24fup6045biQ8NXxoXimiwegMQvFFV3t1emADdGNL1TlS61A==}

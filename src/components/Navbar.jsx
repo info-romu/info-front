@@ -26,6 +26,8 @@ export default function Example() {
     Navigate('/login')
   }
 
+  const role = Cookies.get('admin')
+
 
   return (
     <header>
@@ -100,10 +102,17 @@ export default function Example() {
                   </div>
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                     <li>
-                      <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <Link to={`/profile/${user.id}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                         Profile
                       </Link>
                     </li>
+                    {role === 'true' && (
+                      <li>
+                        <Link to="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          Admin
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                   <div className="py-2">
                     <Logout className={"block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"}/>
@@ -190,11 +199,20 @@ export default function Example() {
                     </Link>
                     <Link
                     onClick={() => setMobileMenuOpen(false)}
-                    to="/profile"
+                    to={`/profile/${user.id}`}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       Espace client
                     </Link>
+                    {role === 'true' && (
+                      <Link
+                      onClick={() => setMobileMenuOpen(false)}
+                      to="/dashboard"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        Admin
+                      </Link>
+                    )}
                     <div onClick={() => setMobileMenuOpen(false)}>
                       <Logout  className={"-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"}/>
                     </div>
