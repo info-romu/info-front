@@ -17,6 +17,7 @@ import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
+import Contact from './pages/Contact';
 
 const stripePromise = loadStripe('pk_test_51N8qrpHWNoe0qekSPWRTxOgeegPPWK0iiMouWvYSv2apDMHssbZ2Urto4WLAovhtDWwLauJoU7xmFClaFdVPfqnT00B07uE0BP');
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/popup" element={<PopUp />} />
           <Route path="/success" element={<Success/>} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path='/cart'
             element={
