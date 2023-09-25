@@ -18,6 +18,7 @@ import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
+import Contact from './pages/Contact';
 import DashboardAdmin from './pages/DashboardAdmin';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
@@ -67,6 +68,7 @@ function App() {
           )}       
           <Route path="/popup" element={<PopUp />} />
           <Route path="/success" element={<Success/>} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path='/cart'
             element={
