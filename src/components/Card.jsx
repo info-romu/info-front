@@ -1,24 +1,21 @@
 import React from "react";
-import Cookies from 'js-cookie';
-import config from '../../config'
-
-
+import Cookies from "js-cookie";
+import config from "../../config";
 
 const Card = ({ item }) => {
-
   const addToCart = (itemId) => {
-    const userId = Cookies.get('id')
-    
+    const userId = Cookies.get("id");
+
     fetch(`${config.API_BASE_URL}/cart_items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
-        "cart_id": userId,
-        "item_id": itemId,
-        "quantity": 1
-    } ),
+      body: JSON.stringify({
+        cart_id: userId,
+        item_id: itemId,
+        quantity: 1,
+      }),
     })
       .then((response) => {
         if (response.ok) {
@@ -32,20 +29,24 @@ const Card = ({ item }) => {
       });
   };
 
-
   return (
     <div className="card">
       <div className="card_body">
-          <div className="item">
-            <div className="item_container">
-            <img className="item_container_img" alt="ici la photo" src={item.imageUrl} />
-            </div>
-            <h6 className="item_name">{item.name}</h6>
-            <p className="item_description">{item.description}</p>
-            <p className="item_price">Prix: {item.price} €</p>
-            <button onClick={() => addToCart(item.id)} className="button_addtocart">
-             Ajouter au panier</button>
+        <div className="item">
+          <div className="item_container">
+            <img
+              className="item_container_img"
+              alt="ici la photo"
+              src={item.imageUrl}
+            />
           </div>
+          <h6 className="item_name">{item.name}</h6>
+          <p className="item_description">{item.description}</p>
+          <p className="item_price">Prix: {item.price} €</p>
+        </div>
+        <div className="button_addtocart">
+          <button onClick={() => addToCart(item.id)}>Ajouter au panier</button>
+        </div>
       </div>
     </div>
   );

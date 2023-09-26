@@ -18,9 +18,12 @@
       grid-gap: 35px;
     }
     &_body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: relative;
-      width: 270px;
-      height: auto;
+      width: 280px;
+      height: 410px;
       margin: 0 auto;
       background: white;
       padding: 20px;
@@ -28,10 +31,10 @@
       background: white;
       color: black;
       transition: 0.6s;
-      box-shadow: 0 30px 50px rgba(0,0,0,.1);
+      box-shadow: 0 30px 50px rgba(0,0,0,.2);
     }
     &_body:hover {
-      box-shadow: 0 30px 50px rgba(0,0,0,.3);
+      box-shadow: 0 30px 50px rgba(0,0,0,.4);
     }
   }
 
