@@ -17,88 +17,88 @@ import inforomu13 from '../assets/inforomu13.jpg'
 
 export default function Realisation() {
 
-        const [popupImage, setPopupImage] = useState(null);
-      
-        const openPopup = (image) => {
-          setPopupImage(image);
-          document.body.style.overflow = ''; // Disable scrolling when the popup is open
-        };
-      
-        const closePopup = () => {
-          setPopupImage(null);
-          document.body.style.overflow = 'auto'; // Enable scrolling when the popup is closed
-        };
+    const [popupImage, setPopupImage] = useState(null);
+
+    const openPopup = (image) => {
+        setPopupImage(image);
+        document.body.style.overflow = ''; // Disable scrolling when the popup is open
+    };
+
+    const closePopup = () => {
+        setPopupImage(null);
+        document.body.style.overflow = 'auto'; // Enable scrolling when the popup is closed
+    };
 
     return (
-        <div>
+        <section>
             <h2 className='mb-10 font-bold md:ms-5'>Nos Réalisations</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:m-5">
-                <div className="grid gap-4">
-                    <div onClick={() => openPopup(inforomu1)}>                        
-                        <img className=" rounded-lg" src={inforomu1} alt="" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:m-5">
+                <div className="grid gap-5">
+                    <div className='real_card' onClick={() => openPopup(inforomu1)}>
+                        <img className="real_card_img rounded-lg" src={inforomu1} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu2)}>                        
-                        <img className=" rounded-lg" src={inforomu2} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu2)}>
+                        <img className="real_card_img rounded-lg" src={inforomu2} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu3)}>                        
-                        <img className=" rounded-lg" src={inforomu3} alt="" />
-                    </div>
-                </div>
-                <div className="grid gap-4">
-                    <div onClick={() => openPopup(inforomu6)}>
-                        <img className=" rounded-lg" src={inforomu6} alt="" />
-                    </div>
-                    <div onClick={() => openPopup(inforomu5)}>
-                        <img className=" rounded-lg" src={inforomu5} alt="" />
-                    </div>
-                    <div onClick={() => openPopup(inforomu4)}>
-                        <img className=" rounded-lg" src={inforomu4} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu3)}>
+                        <img className="real_card_img rounded-lg" src={inforomu3} alt="" />
                     </div>
                 </div>
-                <div className="grid gap-4">
-                    <div onClick={() => openPopup(inforomu7)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu7} alt="" />
+                <div className="grid gap-5">
+                    <div className='real_card' onClick={() => openPopup(inforomu6)}>
+                        <img className="real_card_img rounded-lg" src={inforomu6} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu8)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu8} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu5)}>
+                        <img className="real_card_img rounded-lg" src={inforomu5} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu13)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu13} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu4)}>
+                        <img className="real_card_img rounded-lg" src={inforomu4} alt="" />
                     </div>
                 </div>
-                <div className="grid gap-4">
-                    <div onClick={() => openPopup(inforomu10)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu10} alt="" />
+                <div className="grid gap-5">
+                    <div className='real_card' onClick={() => openPopup(inforomu7)}>
+                        <img className="real_card_img rounded-lg" src={inforomu7} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu12)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu12} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu8)}>
+                        <img className="real_card_img rounded-lg" src={inforomu8} alt="" />
                     </div>
-                    <div onClick={() => openPopup(inforomu11)}>
-                        <img className="h-auto max-w-full rounded-lg" src={inforomu11} alt="" />
+                    <div className='real_card' onClick={() => openPopup(inforomu13)}>
+                        <img className="real_card_img rounded-lg" src={inforomu13} alt="" />
+                    </div>
+                </div>
+                <div className="grid gap-5">
+                    <div className='real_card' onClick={() => openPopup(inforomu10)}>
+                        <img className="real_card_img rounded-lg" src={inforomu10} alt="" />
+                    </div>
+                    <div className='real_card' onClick={() => openPopup(inforomu12)}>
+                        <img className="real_card_img rounded-lg" src={inforomu12} alt="" />
+                    </div>
+                    <div className='real_card' onClick={() => openPopup(inforomu11)}>
+                        <img className="real_card_img rounded-lg" src={inforomu11} alt="" />
                     </div>
                 </div>
                 {popupImage && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-75">
-          <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-            <img className="ms:max-w-screen-md" src={popupImage} alt="Popup Image" />
-            <button
-              className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none bg-red-500 rounded-lg"
-              onClick={closePopup}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
+                    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-75">
+                        <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                            <img className="ms:max-w-screen-md" src={popupImage} alt="Popup Image" />
+                            <button
+                                className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none bg-red-500 rounded-lg"
+                                onClick={closePopup}
+                            >
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
-        </div>
+        </section>
     )
 }
