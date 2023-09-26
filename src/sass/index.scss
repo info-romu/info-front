@@ -14,8 +14,11 @@ $secondary-font : #108A00;
 @import './partials/popup';
 @import './partials/card';
 @import './partials/form';
+@import './partials/contact';
 @import './partials/banner';
 @import './partials/profile';
+@import './partials/real';
+
 
 @font-face {
     font-family: 'Varela';
@@ -58,4 +61,11 @@ h3 {
     color: black;
     font-size: 1.5em;
     font-weight: 400;
+}
+
+input[type='text'], [type='email'], textarea, [type='number'], select{
+    --tw-ring-color: none
+}
+input[type='text']:focus, [type='email']:focus, textarea:focus, [type='number']:focus, select:focus{
+    --tw-ring-color: none
 }

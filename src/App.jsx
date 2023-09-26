@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import CheckoutForm from './components/CheckoutForm';
 import Cart from './pages/Cart';
 import Login from "./pages/Login";
+import Realisation from './pages/Realisation';
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
 import Profile from "./pages/Profile";
@@ -21,6 +22,7 @@ import PopUp from './components/PopUp';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
+import Contact from './pages/Contact';
 import DashboardAdmin from './pages/DashboardAdmin';
 
 
@@ -67,7 +69,9 @@ function App() {
           </Route>
 
           <Route path="/services" element={<Services />} />
-          
+            
+          <Route path="/realisations" element={<Realisation />} />
+
           {hasAdminRole() ? (
             <Route path="/dashboard" element={<DashboardAdmin />} />
           ) : (
@@ -78,6 +82,7 @@ function App() {
           )}       
           <Route path="/popup" element={<PopUp />} />
           <Route path="/success" element={<Success/>} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path='/cart'
             element={
