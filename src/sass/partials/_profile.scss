@@ -31,3 +31,10 @@
   flex: 1;
   padding: 16px;
 }
+
+.tabs {
+  color: light rgb(134, 134, 134);
+  &:hover {
+    color: $secondary-color;
+  }
+}

@@ -9,6 +9,9 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
 import Profile from "./pages/Profile";
+import Order from "./pages/Order";
+import Informations from "./pages/Informations";
+import Estimate from "./pages/Estimate";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from './atom';
@@ -19,6 +22,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Success from './pages/Success';
 import DashboardAdmin from './pages/DashboardAdmin';
+
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
@@ -55,8 +59,15 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/market_place" element={<MarketPlace />} />
-          <Route path="/profile/:id" element={<Profile />} />
+          
+          <Route path="/profile/:id" element={<Profile />}>
+            <Route path="informations" element ={<Informations />} />
+            <Route path="commandes" element ={<Order/>} />
+            <Route path="devis" element ={<Estimate />} />
+          </Route>
+
           <Route path="/services" element={<Services />} />
+          
           {hasAdminRole() ? (
             <Route path="/dashboard" element={<DashboardAdmin />} />
           ) : (
