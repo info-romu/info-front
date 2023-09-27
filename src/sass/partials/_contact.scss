@@ -7,7 +7,9 @@
 .container{
   max-width: 1250px;
   background: #fff;
-  width: 1100px;
+  width: 950px;
+  height: 650px;
+  margin-top: 10px;
   padding: 25px 40px 10px 40px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -27,7 +29,7 @@
 }
 
 .container form{
-  padding: 30px 0 0 0;
+  padding: 1px 0 0 0;
 }
 
 .container form .form-row{
@@ -166,38 +168,75 @@ form .form-row .textarea{
 }
 
 .submit-btn {
-    display: flex;
-    justify-content: center;
-}
-
-.submit-btn .input-data{
-  overflow: hidden;
-  height: 45px!important;
-  width: 25%!important;
-}
-
-.submit-btn .input-data .inner{
-  height: 100%;
-  width: 300%;
   position: absolute;
-  left: -100%;
-  background: -webkit-linear-gradient(right, #09ff55, #24c201, #00ff55, #24c201);
-  transition: all 0.4s;
-}
-
-.submit-btn .input-data:hover .inner{
-  left: 0;
-}
-
-.submit-btn .input-data input{
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Varela';
+  font-size: 1.2rem;
+  color: $secondary-color;
+  line-height: 1;
+  width: 12rem;
+  text-align: center;
+  padding: 1rem 2rem;
   background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  border: 2px solid #20d600;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
   cursor: pointer;
-  position: relative;
-  z-index: 2;
+
+  &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 157, 58);
+      background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.25s ease-in-out;
+      z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+      color: #fff;
+      border-color: #fff;
+      &::before {
+          transform: scaleY(1);
+      }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+
+  .container .text {
+    font-size: 2rem;
+  }
+
+  .container form {
+    padding-top: 1rem;
+  }
+  
+  .container form .form-row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .container form .form-row .input-data,
+  .container form .form-row .custom-dropdown,
+  .container form .form-row .submit-btn {
+    margin-bottom: .9rem;
+  }
+
+  .submit-btn {
+    bottom: .9rem;
+  }
 }
