@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { Link, useNavigate, useLocation } from 'react-router-dom'
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 export default function Informations () {
  
@@ -14,8 +15,8 @@ export default function Informations () {
   <p>Mon adresse : blablabla </p>
   </div>
   <div className="client_modifications">
-  <a>Modifier mes informations</a>
-  <a>Modifier mon mot de passe</a>
+  <Link>Modifier mes informations</Link>
+  <Link>Modifier mon mot de passe</Link>
   </div>
 </div>
 )}
