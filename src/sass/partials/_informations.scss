@@ -1,13 +1,11 @@
 .client {
-  display: flex;
-  justify-content: space-around;
-
+  font-family: 'Varela';
+  
   &_informations {
     justify-content: flex-start;
   }
 
   &_address {
-    
     display: flex;
     justify-content: flex-end;
   }
