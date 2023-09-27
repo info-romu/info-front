@@ -5,13 +5,17 @@ import Cookies from "js-cookie";
 export default function Informations () {
  
   return (
-  <div>
+  <div className="client">
+  <div className="client_informations">
   <p>Mon nom : {Cookies.get('username')}</p>
   <p>Mon e-mail : {Cookies.get('email')}</p>
+  </div>
+  <div className="client_address">
   <p>Mon adresse : blablabla </p>
+  </div>
+  <div className="client_modifications">
   <a>Modifier mes informations</a>
-  <br></br>
   <a>Modifier mon mot de passe</a>
+  </div>
 </div>
-
 )}
