@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Informations () {
  
   return (
-  <div className="client">
+  <section className="client">
   <div className="client_informations">
   <p>Mon nom : {Cookies.get('username')}</p>
   <p>Mon e-mail : {Cookies.get('email')}</p>
@@ -15,8 +15,8 @@ export default function Informations () {
   <p>Mon adresse : blablabla </p>
   </div>
   <div className="client_modifications">
-  <Link>Modifier mes informations</Link>
-  <Link>Modifier mon mot de passe</Link>
+  <Link to="#">Modifier mes informations</Link>
+  <Link to="#">Modifier mon mot de passe</Link>
   </div>
-</div>
+</section>
 )}

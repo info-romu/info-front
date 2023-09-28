@@ -1,18 +1,20 @@
 .client {
   font-family: 'Varela';
-  
+  margin: 20px;
+  height: 50vh;
+  display: flex;
+
   &_informations {
     justify-content: flex-start;
   }
 
   &_address {
-    display: flex;
     justify-content: flex-end;
   }
   &_modifications {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
     color: $secondary-color;
-
   }
 }

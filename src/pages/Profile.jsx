@@ -43,10 +43,10 @@ export default function Profile() {
   };
 
   return (
-    <div className="dashboard">
-      <header className="dashboard_header">
+    <section className="dashboard">
+      <div className="dashboard_header">
         <h2>Mon compte</h2>
-      </header>
+      </div>
       <div className="dashboard_content">
         <aside className="sidebar">
           <ul>
@@ -79,6 +79,7 @@ export default function Profile() {
                 mes demandes de devis
               </Link>
             </li>
+            <div className="sidebar_bottom">
             <li>
               <Link
                 to="/contact"
@@ -94,6 +95,7 @@ export default function Profile() {
                 className={"-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 disconnect disconnect_icon"}
               />
             </li>
+            </div>
           </ul>
         </aside>
         <div className="dashbord_content">
@@ -162,6 +164,6 @@ export default function Profile() {
           {renderTabContent()}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
