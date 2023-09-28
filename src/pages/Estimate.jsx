@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Estimate () {
+export default function Estimate() {
 
   return (
     <div className="p-3">
