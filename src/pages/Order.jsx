@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-// import { Link, useNavigate, useLocation } from 'react-router-dom'
-// import config from "../../config";
-// import Cookies from "js-cookie";
+import React from "react";
 
-export default function Order () {
+export default function Order() {
 
   return (
-    <h6> mes commandes </h6>
-
-  )}
+    <div className="p-3">
+      <p> mes commandes </p>
+    </div>
+  )
+}

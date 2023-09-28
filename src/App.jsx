@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import MarketPlace from "./pages/MarketPlace";
 import Profile from "./pages/Profile";
 import Order from "./pages/Order";
-import Informations from "./pages/Informations";
 import Estimate from "./pages/Estimate";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAtom } from 'jotai';
@@ -63,7 +62,6 @@ function App() {
           <Route path="/market_place" element={<MarketPlace />} />
           
           <Route path="/profile/:id" element={<Profile />}>
-            <Route path="informations" element ={<Informations />} />
             <Route path="commandes" element ={<Order/>} />
             <Route path="devis" element ={<Estimate />} />
           </Route>

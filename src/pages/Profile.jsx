@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import config from "../../config";
 import Cookies from "js-cookie";
 import Logout from "../components/Logout";
-import Informations from "./Informations";
 import Order from "./Order";
 import Estimate from "./Estimate";
+import { useAtom } from 'jotai'
+import { userAtom } from '../atom'
 
 export default function Profile() {
   const userId = Cookies.get("id");
   const [profile, setprofile] = useState([]);
   const Navigate = useNavigate();
-  const location = useLocation();
-  const [activeTab, setActiveTab] = useState("informations");
+  const [activeTab, setActiveTab] = useState("commandes");
+  const [, setUserState] = useAtom(userAtom)
+
 
   useEffect(() => {
     const token = Cookies.get('token');
@@ -30,16 +32,14 @@ export default function Profile() {
         console.error("Erreur lors de la récupération des données de l'utilisateur :", error);
       });
   }, []);
-  
+
   const changeTab = (tabName) => {
     setActiveTab(tabName);
     Navigate(`/profile/${userId}/${tabName}`);
   };
 
   const renderTabContent = () => {
-    if (activeTab === "informations") {
-      return <Informations />;
-    } else if (activeTab === "commandes") {
+    if (activeTab === "commandes") {
       return <Order />;
     } else if (activeTab === "devis") {
       return <Estimate />;
@@ -48,90 +48,74 @@ export default function Profile() {
     return null;
   };
 
+  const handleRemoveAccount = () => {
+    const token = Cookies.get('token');
+  
+    fetch(`${config.API_BASE_URL}/users`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then(() => {
+        
+        setUserState({isLogged: false });
+        Cookies.remove('token');
+        Cookies.remove('id');
+        Cookies.remove('username');
+        Cookies.remove('email');
+        Cookies.remove('admin');
+        console.log('vous avez supprimer votre compte');
+        Navigate('/')
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la suppression du compte :", error);
+      });
+  };
+
   return (
     <section className="dashboard">
-      <div className="dashboard_header">
-        <h2>Mon compte</h2>
-      </div>
-      <div className="dashboard_content">
-        <aside className="sidebar">
-          <ul>
-            <li>
-              <Link
-                to={`/profile/${userId}/informations`}
-                onClick={() => changeTab("informations")}
-                className={`${
-                  activeTab === "informations" ? "active-link" : ""
-                }`}
-              >
-                mes informations
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={`/profile/${userId}/commandes`}
-                onClick={() => changeTab("commandes")}
-                className={`${activeTab === "commandes" ? "active-link" : ""}`}
-              >
-                mes commandes
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={`/profile/${userId}/devis`}
-                onClick={() => changeTab("devis")}
-                className={`${activeTab === "devis" ? "active-link" : ""}`}
-              >
-                mes demandes de devis
-              </Link>
-            </li>
-            <div className="sidebar_bottom">
-            <li>
-              <Link
-                to="/contact"
-                className={`text-sm font-semibold leading-6 text-gray-900 ${
-                  location.pathname === "/contact" ? "active-link" : ""
-                }`}
-              >
-                Besoin d'aide ?
-              </Link>
-            </li>
-            <li>
-              <Logout
-                className={"-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 disconnect disconnect_icon"}
-              />
-            </li>
-            </div>
-          </ul>
-        </aside>
-        <div className="dashbord_content">
-          <h2>Bienvenue {profile.username}</h2>
-          <div className="border-b border-gray-200 dark:border-gray-700">
-            <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-              <li className="tabs mr-2">
+      <h2 className="ms-2 font-bold">Mon compte</h2>
+      <div className="dashboard_content mx-2 flex-col-reverse md:flex-row">
+        <aside className="sidebar w-auto md:w-3/5 md:max-w-xs">
+          <div className="sidebar_profile">
+            <p className="sidebar_profile_letter font-semibold bg-green-500">{profile && profile.username && profile.username.charAt(0)}</p>
+            <p className="sidebar_profile_username font-semibold">{profile.username}</p>
+          </div>
+          <div className="sidebar_details flex flex-col">
+            <p className=" font-semibold text-lg">Details</p>
+            <hr />
+            <p className="mt-2"><span className="font-semibold">username :</span> {profile.username}</p>
+            <p><span className=" font-semibold">Email :</span> {profile.email}</p>
+            <Link className=" font-semibold hover:underline hover:underline-offset-2" to="#">Modifier mes informations</Link>
+            <Link className=" font-semibold hover:underline hover:underline-offset-2" to="#">Modifier mon mot de passe</Link>
+            <ul>
+              <li>
                 <Link
-                  to={`/profile/${userId}/informations`}
-                  onClick={() => changeTab("informations")}
-                  className={`inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300
-        ${activeTab === "informations" ? "active-link" : ""}`}
+                  to="/contact"
+                  className="font-semibold hover:underline hover:underline-offset-2"
                 >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-                  </svg>
-                  Mes informations
+                  Besoin d'aide ?
                 </Link>
               </li>
+              <li>
+                <Logout
+                  className="font-semibold disconnect disconnect_icon"
+                />
+              </li>
+            </ul>
+            <button onClick={handleRemoveAccount} className="font-semibold bg-red-600 rounded w-5/6">Supprimer mon Compte</button>
+          </div>
+        </aside>
+        <div className="dashboard_content_container">
+          <div className="border-b my-5 border-gray-200 dark:border-gray-700">
+            <ul className="flex flex-wrap justify-center -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
               <li className="tabs mr-2">
                 <Link
                   to={`/profile/${userId}/commandes`}
                   onClick={() => changeTab("commandes")}
-                  className={`inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300 
+                  className={`px-6 inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300 
         ${activeTab === "commandes" ? "active-link" : ""}`}
                 >
                   <svg
@@ -150,7 +134,7 @@ export default function Profile() {
                 <Link
                   to={`/profile/${userId}/devis`}
                   onClick={() => changeTab("devis")}
-                  className={`inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300
+                  className={`px-6 inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300
         ${activeTab === "devis" ? "active-link" : ""}`}
                 >
                   <svg
