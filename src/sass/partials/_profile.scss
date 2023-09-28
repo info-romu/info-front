@@ -1,7 +1,10 @@
+
+
 .dashboard {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 80%;
   &_content {
     display: flex;
     flex: 1;
@@ -12,24 +15,15 @@
 .sidebar {
   margin: 100px;
   border: 3px solid $secondary-color;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color:white;
   color: black;
-  width: 250px;
+  max-height: 60vh;
   padding: 16px;
 
-  ul {
-    list-style-type: none;
-    padding: 0;
+  &_bottom {
+    justify-content: flex-end;
   }
-  li {
-    margin-bottom: 10px;
-  }
-}
-
-.dashbord-content {
-  flex: 1;
-  padding: 16px;
 }
 
 .tabs {
@@ -37,4 +31,41 @@
   &:hover {
     color: $secondary-color;
   }
+}
+
+.disconnect {
+  color: $secondary-color;
+  &_icon::before {
+  content: '\f2f6';
+  font-family: fontAwesome;
+  font-size: large;
+  color: $secondary-color;
+}}
+
+
+@media screen and (max-width: 1024px) {
+  .dashboard {
+    width: 100%;
+  }
+
+  .dashboard_header {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 830px) {
+
+    .dashboard {
+      width: 100%;
+    }
+  .dashboard_header {
+    font-size: 1rem;
+  }
+  aside  {
+    display: none;
+  }}
+  
+
+//   .submit-btn {
+//     bottom: .9rem;
+//   }
 }
