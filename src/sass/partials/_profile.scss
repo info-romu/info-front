@@ -1,28 +1,40 @@
-
-
 .dashboard {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
+  min-height:70vh;
   &_content {
     display: flex;
-    flex: 1;
-    overflow: hidden;
+    margin-top: 5%;
+    &_container {
+      width: 100%;
+    }
   }
 }
 
 .sidebar {
-  margin: 100px;
   border: 3px solid $secondary-color;
   border-radius: 15px;
   background-color:white;
   color: black;
-  max-height: 60vh;
-  padding: 16px;
-
-  &_bottom {
-    justify-content: flex-end;
+  padding: 15px;
+  margin: 0 1%;
+  height: auto;
+  &_profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    &_letter {
+      padding: 20px 34px;
+      border-radius: 10px;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+    &_username {
+      font-size: 1.1em;
+    }
+  }
+  &_details {
+    line-height: 2em;
   }
 }
 
@@ -40,32 +52,11 @@
   font-family: fontAwesome;
   font-size: large;
   color: $secondary-color;
-}}
-
-
-@media screen and (max-width: 1024px) {
-  .dashboard {
-    width: 100%;
+  margin-right: 5px;
   }
+}
 
-  .dashboard_header {
-    font-size: 1rem;
-  }
-
-  @media screen and (max-width: 830px) {
-
-    .dashboard {
-      width: 100%;
-    }
-  .dashboard_header {
-    font-size: 1rem;
-  }
-  aside  {
-    display: none;
-  }}
-  
-
-//   .submit-btn {
-//     bottom: .9rem;
-//   }
+.active-link{
+  color: $secondary-color;
+  border-bottom: 3px solid $secondary-color;
 }
