@@ -15,16 +15,22 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState("informations");
 
   useEffect(() => {
-    fetch(`${config.API_BASE_URL}/profile/${userId}`)
+    const token = Cookies.get('token');
+
+    fetch(`${config.API_BASE_URL}/profile/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setprofile(data);
       })
       .catch((error) => {
-        console.error("Erreur lors de la récupération des propriétés :", error);
+        console.error("Erreur lors de la récupération des données de l'utilisateur :", error);
       });
   }, []);
-
+  
   const changeTab = (tabName) => {
     setActiveTab(tabName);
     Navigate(`/profile/${userId}/${tabName}`);
@@ -99,7 +105,7 @@ export default function Profile() {
           </ul>
         </aside>
         <div className="dashbord_content">
-          <h2>Bienvenue {Cookies.get("username")}</h2>
+          <h2>Bienvenue {profile.username}</h2>
           <div className="border-b border-gray-200 dark:border-gray-700">
             <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
               <li className="tabs mr-2">
