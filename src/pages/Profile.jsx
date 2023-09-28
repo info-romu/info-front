@@ -50,7 +50,7 @@ export default function Profile() {
 
   const handleRemoveAccount = () => {
     const token = Cookies.get('token');
-  
+
     fetch(`${config.API_BASE_URL}/users`, {
       method: 'DELETE',
       headers: {
@@ -59,8 +59,8 @@ export default function Profile() {
     })
       .then((response) => response.json())
       .then(() => {
-        
-        setUserState({isLogged: false });
+
+        setUserState({ isLogged: false });
         Cookies.remove('token');
         Cookies.remove('id');
         Cookies.remove('username');

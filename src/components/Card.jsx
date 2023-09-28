@@ -1,8 +1,20 @@
 import React from "react";
 import Cookies from "js-cookie";
 import config from "../../config";
+import { useAtom } from 'jotai';
+import { userAtom } from '../atom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Card = ({ item }) => {
+  const [user] = useAtom(userAtom);
+  const Navigate = useNavigate();
+
+  const handleClick = () => {
+    Navigate('/login')
+  };
+
+
   const addToCart = (itemId) => {
     const userId = Cookies.get("id");
 
@@ -44,9 +56,17 @@ const Card = ({ item }) => {
           <p className="item_description">{item.description}</p>
           <p className="item_price">Prix: {item.price} €</p>
         </div>
-        <div className="button_addtocart">
-          <button onClick={() => addToCart(item.id)}>Ajouter au panier</button>
-        </div>
+        {user.isLogged ? (
+
+          <div onClick={() => addToCart(item.id)} className="button_addtocart">
+            <p >Ajouter au panier</p>
+          </div>
+
+        ) : (
+          <div onClick={handleClick} className="button_addtocart">
+            <p>Ajouter au panier</p>
+          </div>
+        )}
       </div>
     </div>
   );
