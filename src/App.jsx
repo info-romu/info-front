@@ -101,8 +101,6 @@ function App() {
                 path='/cart'
                 element={<Navigate to="/" />}
               />
-              <Route path="/success" element={<Navigate to="/" />} />
-              <Route path="/cancel" element={<Navigate to="/" />} />
             </>
 
           )}

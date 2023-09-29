@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Cancel() {
-    return (
-        <div>Cancel</div>
-    )
+  return (
+    <div>Cancel</div>
+  )
 }
