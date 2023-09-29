@@ -1,5 +1,7 @@
 .caroussel {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: calc(min(1440px, 90%));
     margin: 0 auto;
     min-height: 100vh;
@@ -22,7 +24,7 @@
         -webkit-text-fill-color: transparent;
         background-size: 100%;
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 6.2rem;
     
         &::before,
         &::after {
@@ -112,6 +114,10 @@
         color: #000000;
         flex-grow: 1;
         padding: 0.6rem;
+        background: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        border-radius: 25px;
+        margin: 1rem;
         // border: 1px #00aa22 solid;
     }
 
@@ -120,7 +126,7 @@
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 7rem;
+        bottom: -3.2rem;
         font-family: 'Varela';
         font-size: 1.2rem;
         color: $secondary-color;
@@ -289,11 +295,76 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
+
     .caroussel {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-    }
-
-
+      
+        .txt-intro-caroussel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-top: 15.7rem;
+        }
+      
+        .span-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: -7.8rem;
+        }
+      
+        .txt-span-description {
+            font-size: 1rem;
+            color: #000000;
+            flex-grow: 1;
+            padding: 0.6rem;
+            font-family: 'Varela';
+            background: #ffffff;
+            box-shadow: rgb(0, 0, 0) 0px 30px 90px;
+        }
+      
+        .span-description-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 9rem;
+            width: 22rem;
+            height: 5rem;
+        }
+      
+        .swiper {
+            width: 100%;
+            height: 550px;
+            margin-top: 7.5rem;
+        }
+      
+        .btn-contact-service {
+            position: relative;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Varela";
+            font-size: 1.2rem;
+            color: #2AA700;
+            line-height: 1;
+            width: 12rem;
+            height: 3rem;
+            text-align: center;
+            padding: 0rem 2rem;
+            background: none;
+            border: 2px solid #20d600;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
+        }
+    } 
 }
