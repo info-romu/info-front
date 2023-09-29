@@ -18,7 +18,7 @@ export default function Footer() {
                 <div className='flex flex-col xl:flex-row justify-around w-full'>
                     <Map/>
                     <div className='sm:flex-rows sm:flex sm:justify-around'>
-                        <div className='ms:me-20 mb-5 xl:mb-0 w-full sm:w-5/12'>
+                        <div className='ms:me-20 flex flex-col mb-5 xl:mb-0 w-full sm:w-5/12'>
                             <p className='mb-2'>57 C Rue Henri Barbusse,<br/>77124 Crégy-lès-Meaux (siège social)</p>
                             <p className='mb-2'>5 rue Jean Pierre Plicque,<br/>77124 Villenoy (Dépôts et bureaux)</p>
                             <p className='mb-2'>Nous possédons une station de charge de<br/>150 Kw à cette adresse disponible de 9h00 à 16h00</p>
