@@ -1,0 +1,12 @@
+.instagram::after{
+    content: '\f16d';
+    font-family: fontAwesome;
+    font-size: large;
+    margin-left: 10px;
+}
+.heart::after {
+    content: '\f004';
+    font-family: fontAwesome;
+    font-size: large;
+    color: red;
+}
