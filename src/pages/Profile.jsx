@@ -80,7 +80,7 @@ export default function Profile() {
       <div className="dashboard_content mx-2 flex-col-reverse md:flex-row">
         <aside className="sidebar w-auto md:w-3/5 md:max-w-xs">
           <div className="sidebar_profile">
-            <p className="sidebar_profile_letter font-semibold bg-green-500">{profile && profile.username && profile.username.charAt(0)}</p>
+            <p className="sidebar_profile_letter font-semibold">{profile && profile.username && profile.username.charAt(0)}</p>
             <p className="sidebar_profile_username font-semibold">{profile.username}</p>
           </div>
           <div className="sidebar_details flex flex-col">
