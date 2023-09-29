@@ -116,7 +116,7 @@ export default function Profile() {
                   to={`/profile/${userId}/commandes`}
                   onClick={() => changeTab("commandes")}
                   className={`px-6 inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300 
-        ${activeTab === "commandes" ? "active-link" : ""}`}
+        ${activeTab === "commandes" ? "active-link-profile" : ""}`}
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -135,7 +135,7 @@ export default function Profile() {
                   to={`/profile/${userId}/devis`}
                   onClick={() => changeTab("devis")}
                   className={`px-6 inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300
-        ${activeTab === "devis" ? "active-link" : ""}`}
+        ${activeTab === "devis" ? "active-link-profile" : ""}`}
                 >
                   <svg
                     className="w-4 h-4 mr-2"
