@@ -5,15 +5,13 @@ import { useAtom } from 'jotai';
 import { userAtom } from '../atom';
 import { useNavigate } from 'react-router-dom';
 
-
-const Card = ({ item }) => {
+const Card = ({ item, setShowAlert }) => {
   const [user] = useAtom(userAtom);
   const Navigate = useNavigate();
 
   const handleClick = () => {
-    Navigate('/login')
+    Navigate('/login');
   };
-
 
   const addToCart = (itemId) => {
     const userId = Cookies.get("id");
@@ -31,6 +29,7 @@ const Card = ({ item }) => {
     })
       .then((response) => {
         if (response.ok) {
+          setShowAlert(true); 
           console.log("Article ajouté au panier !");
         } else {
           console.error("Erreur lors de l'ajout de l'article au panier.");
@@ -57,11 +56,9 @@ const Card = ({ item }) => {
           <p className="item_price">Prix: {item.price} €</p>
         </div>
         {user.isLogged ? (
-
           <div onClick={() => addToCart(item.id)} className="button_addtocart">
             <p >Ajouter au panier</p>
           </div>
-
         ) : (
           <div onClick={handleClick} className="button_addtocart">
             <p>Ajouter au panier</p>
