@@ -8,7 +8,7 @@
     column-gap: 48px;
     padding-block: min(20vh, 48px);
 
-    h1 {
+    .title-service {
         position: absolute;
         top: 0;
         left: 50%;
@@ -24,23 +24,7 @@
         -webkit-text-fill-color: transparent;
         background-size: 100%;
         text-align: center;
-        margin-top: 6.2rem;
-    
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0.7rem;
-            width: 80%;
-            height: 0.2rem;
-            background-color: black;
-        }
-        &::before {
-            left: 0;
-        }
-        &::after {
-            right: 0;
-        }
+        margin-top: 4.6rem;
     }
 
     p {
