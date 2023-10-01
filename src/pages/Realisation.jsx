@@ -31,7 +31,7 @@ export default function Realisation() {
 
     return (
         <section>
-            <h2 className='mb-10 font-bold md:ms-5'>Nos Réalisations</h2>
+            <h2 className='mb-10 text-center font-bold md:ms-5'>Nos Réalisations</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:m-5">
                 <div className="grid gap-5">
                     <div className='real_card' onClick={() => openPopup(inforomu1)}>

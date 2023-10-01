@@ -1,4 +1,32 @@
 section{
+    h2 {
+        text-transform: capitalize;
+        font-family: 'Varela';
+        font-size: 3rem;
+        letter-spacing: 0.6;
+        background: rgb(0, 157, 58);
+        background: linear-gradient(188deg, rgba(0, 157, 58, 1) 0%, rgba(0, 215, 49, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100%;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0.7rem;
+            width: 80%;
+            height: 0.2rem;
+            background-color: black;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+    }
     .real_card {
         overflow: hidden;
         position: relative;

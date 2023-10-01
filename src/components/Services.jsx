@@ -6,6 +6,7 @@ import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/bundle'
 import PopUp from './PopUp'
+import { Link } from 'react-router-dom'
 
 
 
@@ -27,7 +28,7 @@ export default function Caroussel() {
   return (
     <div className='caroussel'>
       <div className='content-caroussel'>
-        <h1 className='title-service'>Nos services.</h1>
+        <h2 className='title-service'>Nos services.</h2>
         <div className='txt-intro-caroussel'>
           <p>Inforomu vous accompagne dans tout vos projets, vous trouverez ici tout les domaines dans lesquelles nous intervenons.</p>
         </div>
@@ -100,9 +101,9 @@ export default function Caroussel() {
         }
       </Swiper>
       <div>
-        <button className='btn-contact-service'>
+        <Link to="/contact" className='btn-contact-service'>
           <span className='span-btn'>Nous contacter</span>
-        </button>
+        </Link>
       </div>
       <PopUp isOpen={popUpOpen} onClose={closePopUp} title={selectedData.title} description={selectedData.description} />
     </div>
