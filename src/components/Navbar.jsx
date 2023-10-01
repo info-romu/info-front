@@ -38,7 +38,7 @@ export default function Example() {
             Nos services
           </Link>
           <Link to="/realisations" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/realisations' ? 'active-link' : ''}`}>
-            Nos Réalisations
+            Nos réalisations
           </Link>
           <Link to="/contact" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/contact' ? 'active-link' : ''}`}>
             Nous contacter
@@ -104,13 +104,13 @@ export default function Example() {
                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                       <li>
                         <Link to={`/profile/${userId}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                          Profile
+                          Mon compte
                         </Link>
                       </li>
                       {role === 'true' && (
                         <li>
                           <Link to="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Admin
+                            Tableau de bord administrateur
                           </Link>
                         </li>
                       )}
@@ -171,7 +171,7 @@ export default function Example() {
                   to="/realisations"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Nos Réalisations
+                  Nos réalisations
                 </Link>
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
@@ -196,14 +196,14 @@ export default function Example() {
                       to="/cart"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Votre Panier
+                      Mon Panier
                     </Link>
                     <Link
                       onClick={() => setMobileMenuOpen(false)}
                       to={`/profile/${userId}`}
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Espace client
+                      Mon compte
                     </Link>
                     {role === 'true' && (
                       <Link
@@ -211,7 +211,7 @@ export default function Example() {
                         to="/dashboard"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >
-                        Admin
+                        Tableau de bord administrateur
                       </Link>
                     )}
                     <div onClick={() => setMobileMenuOpen(false)}>
