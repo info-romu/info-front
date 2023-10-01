@@ -76,7 +76,7 @@ export default function Profile() {
 
   return (
     <section className="dashboard">
-      <h2 className="ms-2 font-bold">Mon compte</h2>
+      <h2 className="mb-10 m-6">Mon compte</h2>
       <div className="dashboard_content mx-2 flex-col-reverse md:flex-row">
         <aside className="sidebar w-auto md:w-3/5 md:max-w-xs">
           <div className="sidebar_profile">
@@ -84,7 +84,7 @@ export default function Profile() {
             <p className="sidebar_profile_username font-semibold">{profile.username}</p>
           </div>
           <div className="sidebar_details flex flex-col">
-            <p className=" font-semibold text-lg">Details</p>
+            <p className=" font-semibold text-lg">Mes informations :</p>
             <hr />
             <p className="mt-2"><span className="font-semibold">username :</span> {profile.username}</p>
             <p><span className=" font-semibold">Email :</span> {profile.email}</p>
@@ -105,7 +105,7 @@ export default function Profile() {
                 />
               </li>
             </ul>
-            <button onClick={handleRemoveAccount} className="font-semibold bg-red-600 rounded w-5/6">Supprimer mon Compte</button>
+            <button onClick={handleRemoveAccount} className="font-semibold bg-red-600 rounded w-5/6">Supprimer mon compte</button>
           </div>
         </aside>
         <div className="dashboard_content_container">
