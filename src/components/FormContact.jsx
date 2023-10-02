@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import config from '../../config';
+import AlertEmailSent from "../components/AlertEmailSent";
 
 export default function FormContact() {
 
@@ -10,6 +11,7 @@ export default function FormContact() {
   const [typeCompteur, setTypeCompteur] = useState('');
   const [demande, setDemande] = useState('');
 
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +35,7 @@ export default function FormContact() {
       });
 
       if (response.ok) {
+        setShowAlert(true);
         console.log('Mail envoyé avec succès');
         setNomPrenom('')
         setNomSociete('')
@@ -102,6 +105,7 @@ export default function FormContact() {
                   <button type="submit" className='submit-btn'>Envoyer</button>
                 </div>
               </div>
+              <AlertEmailSent showAlert={showAlert} setShowAlert={setShowAlert} />
             </div>
           </div>
         </form>
