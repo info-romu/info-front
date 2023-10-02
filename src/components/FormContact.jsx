@@ -51,7 +51,7 @@ export default function FormContact() {
   return (
     <div className='page-container'>
       <div className="container">
-        <h2 className="text-5xl text-center">
+        <h2 className="text-5xl text-center font-bold">
           Contactez-nous
         </h2>
         <form onSubmit={handleSubmit}>

@@ -23,7 +23,7 @@ export default function MarketPlace() {
   return (
     <>
     <section className="boutique">
-      <h2 className='mb-10 text-center text-5xl'>Notre boutique</h2>
+      <h2 className='mb-10 text-center text-5xl font-bold'>Notre boutique</h2>
         <AlertAddToCart showAlert={showAlert} setShowAlert={setShowAlert} />
         <div className="card_container">
           {items.map((item) => (

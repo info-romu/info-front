@@ -28,7 +28,7 @@ export default function Caroussel() {
   return (
     <div className='caroussel'>
       <div className='content-caroussel'>
-        <h2 className='title-service text-5xl'>Nos services.</h2>
+        <h2 className='title-service text-5xl font-bold'>Nos services.</h2>
         <div className='txt-intro-caroussel'>
           <p>Inforomu vous accompagne dans tout vos projets, vous trouverez ici tout les domaines dans lesquelles nous intervenons.</p>
         </div>

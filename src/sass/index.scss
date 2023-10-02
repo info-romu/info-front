@@ -54,6 +54,14 @@ h1 {
 
 h2 {
     color: $secondary-color;
+    font-family: "Varela";
+    font-size: 1.25rem;
+    letter-spacing: 0.6;
+    background: rgb(0, 157, 58);
+    background: linear-gradient(188deg, rgb(0, 157, 58) 0%, rgb(0, 215, 49) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {

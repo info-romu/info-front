@@ -10,7 +10,7 @@ export default function Home() {
         <img className="container_presentation_img w-full  object-cover" src={ImagePresentation} alt="photo de l'entreprise d'Inforomu" />
         <div className="container_presentation_content">
           <h2 className="container_presentation_text text-2xl sm:text-4xl md:text-5xl">
-            Solutions de recharge pour <span className="span-presentation-text">véhicules électriques.</span>
+          <span className="span-presentation-text">Solutions de recharge pour </span> véhicules électriques.
           </h2>
         </div>
       </div>
@@ -20,7 +20,7 @@ export default function Home() {
             Une entreprise spécialisée qui s'occupe de vous de A à Z.
           </h2>
         </div>
-        <div class="svg flex items-center justify-center">
+        <div className="svg flex items-center justify-center">
             <svg width="320" height="320" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="station-de-charge 1">
                         <g id="FILLED_OUTLINE">
