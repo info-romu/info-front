@@ -62,7 +62,7 @@ export default function Home() {
       <div className="container-mid-txt mt-10">
         <div className="container-txt-mid">
           <p className="text-center text-gray-700 text-lg md:text-xl">
-            Fondée en 2013, la société Inforomu profite de sa forte expérience dans le domaine afin de vous apporter les meilleurs conseils et de vous fournir les meilleures prestations possibles lors de nos installations et de la mise en service des produits, ainsi que leur suivi dans le temps grâce à notre service SAV.
+            Fondée en 2013, la société Inforomu profite de sa forte expérience dans le domaine afin de vous apporter les meilleurs conseils et de vous fournir les meilleures prestations possibles lors de nos installations et de la mise en service des produits, ainsi que leur suivi dans le temps grâce à notre service après-vente .
           </p>
         </div>
       </div>
