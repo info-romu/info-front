@@ -3,8 +3,8 @@ import FormContact from '../components/FormContact'
 
 export default function Contact() {
   return (
-    <div>
+    <section className='contact'>
       <FormContact />
-    </div>
+    </section>
   )
 }

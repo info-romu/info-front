@@ -47,7 +47,7 @@ const Card = ({ item, setShowAlert }) => {
           <div className="item_container">
             <img
               className="item_container_img"
-              alt="ici la photo"
+              alt="Image d'un produit en vente par Inforomu"
               src={item.imageUrl}
             />
           </div>

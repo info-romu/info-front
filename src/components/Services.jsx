@@ -28,26 +28,26 @@ export default function Caroussel() {
   return (
     <div className='caroussel'>
       <div className='content-caroussel'>
-        <h2 className='title-service'>Nos services.</h2>
+        <h2 className='title-service text-5xl'>Nos services.</h2>
         <div className='txt-intro-caroussel'>
-          <p>Informu vous accompagne dans tous vos projets. Vous trouverez ici tous les domaines dans lesquels nous intervenons.</p>
+          <p>Inforomu vous accompagne dans tout vos projets, vous trouverez ici tout les domaines dans lesquelles nous intervenons.</p>
         </div>
         <div className='span-container'>
           <div className='span-description-container'>
             <span className='span-description'>1</span>
-            <p className='txt-span-description'>Rendez-vous technique afin de trouver la meilleure réponse possible à votre demande.</p>
+            <p className='txt-span-description'>Rendez-vous technique afin de trouver la meilleur réponse possible à votre demande.</p>
           </div>
           <div className='span-description-container'>
             <span className='span-description'>2</span>
-            <p className='txt-span-description'>Étude du dossier et envoi du devis, planification du chantier si le devis est accepté.</p>
+            <p className='txt-span-description'>Etudes du dossier et envoi du devis, planification du chantier si le devis est accepter.</p>
           </div>
           <div className='span-description-container'>
             <span className='span-description'>3</span>
-            <p className='txt-span-description'>Installation & mise en service des produits grâce à notre équipe de techniciens.</p>
+            <p className='txt-span-description'>Installation & mise en services des produits grace a notre equipe de technicien.</p>
           </div>
           <div className='span-description-container'>
             <span className='span-description'>4</span>
-            <p className='txt-span-description'>Nous ne vous abandonnons pas après la pose ! Nous restons à votre entière disposition, si vous avez des questions ou besoin d'une intervention !</p>
+            <p className='txt-span-description'>Nous ne vous abandonnons pas apres la pose ! Nous restons a votre entiere disposition, si vous avez des questions ou besoin d'une intervention ! </p>
           </div>
         </div>
 

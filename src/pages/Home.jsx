@@ -6,21 +6,21 @@ export default function Home() {
 
   return (
     <section className="presentation w-full">
-      <div className="container_presentation flex items-center justify-center h-96 md:h-80">
-        <img className="container_presentation_img w-full h-full object-cover" src={ImagePresentation} alt="" />
+      <div className="container_presentation h-96 flex items-center justify-center">
+        <img className="container_presentation_img w-full  object-cover" src={ImagePresentation} alt="photo de l'entreprise d'Inforomu" />
         <div className="container_presentation_content">
-          <h2 className="container_presentation_text">
+          <h2 className="container_presentation_text text-2xl sm:text-4xl md:text-5xl">
             Solutions de recharge pour <span className="span-presentation-text">véhicules électriques.</span>
           </h2>
         </div>
       </div>
-      <div className="container_description w-full mt-12 md:flex md:flex-row md:items-center">
+      <div className="container_description w-full ms:mt-12 md:mt-24 xl:mt-52 md:flex md:flex-row items-center justify-center">
         <div className="container_top w-full md:w-1/2">
-          <h2 className="container_top_text text-center text-3xl md:text-4xl font-openBold mb-8 md:mb-0 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
+          <h2 className="container_top_text text-center text-2xl xl:text-3xl font-openBold mb-8 md:mb-0 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
             Une entreprise spécialisée qui s'occupe de vous de A à Z.
           </h2>
         </div>
-        <div class="svg">
+        <div class="svg flex items-center justify-center">
             <svg width="320" height="320" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="station-de-charge 1">
                         <g id="FILLED_OUTLINE">
@@ -54,7 +54,7 @@ export default function Home() {
             </svg>
         </div>
         <div className="container_mid w-full md:w-1/2">
-          <h2 className="container_top_text2 text-center text-3xl md:text-4xl font-openBold">
+          <h2 className="container_top_text2 text-center text-2xl xl:text-3xl font-openBold">
             Vivre avec son temps, c'est déjà penser à demain.
           </h2>
         </div>
@@ -62,7 +62,7 @@ export default function Home() {
       <div className="container-mid-txt mt-10">
         <div className="container-txt-mid">
           <p className="text-center text-gray-700 text-lg md:text-xl">
-            Fondée en 2013, la société Inforomu profite de sa forte expérience dans le domaine afin de vous apporter les meilleurs conseils et de vous fournir les meilleures prestations possibles lors de nos installations et de la mise en service des produits, ainsi que leur suivi dans le temps grâce à notre service après-vente.
+            Fondée en 2013, la société Inforomu profite de sa forte expérience dans le domaine afin de vous apporter les meilleurs conseils et de vous fournir les meilleures prestations possibles lors de nos installations et de la mise en service des produits, ainsi que leur suivi dans le temps grâce à notre service SAV.
           </p>
         </div>
       </div>

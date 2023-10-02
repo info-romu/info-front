@@ -33,12 +33,12 @@ export default function Example() {
   return (
     <header>
       <nav className="nav-container mx-auto flex items-center justify-between py-4 px-4 lg:px-2" aria-label="Global">
-        <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7">
+        <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center xl:gap-7 lg:gap-x-0">
           <Link to="/services" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/services' ? 'active-link' : ''}`}>
             Nos services
           </Link>
           <Link to="/realisations" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/realisations' ? 'active-link' : ''}`}>
-            Nos réalisations
+            Nos Réalisations
           </Link>
           <Link to="/contact" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/contact' ? 'active-link' : ''}`}>
             Nous contacter
@@ -60,7 +60,7 @@ export default function Example() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-7 items-center">
+        <div className="nav-item hidden lg:flex lg:flex-1 lg:justify-center xl:gap-7 lg:gap-x-3 items-center">
           <Link to="/market_place" className={`text-sm font-semibold leading-6 text-gray-900 ${location.pathname === '/market_place' ? 'active-link' : ''}`}>
             Notre boutique
           </Link>
@@ -104,13 +104,13 @@ export default function Example() {
                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                       <li>
                         <Link to={`/profile/${userId}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                          Mon compte
+                          Profile
                         </Link>
                       </li>
                       {role === 'true' && (
                         <li>
                           <Link to="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Tableau de bord administrateur
+                            Admin
                           </Link>
                         </li>
                       )}
@@ -171,7 +171,7 @@ export default function Example() {
                   to="/realisations"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Nos réalisations
+                  Nos Réalisations
                 </Link>
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
@@ -196,14 +196,14 @@ export default function Example() {
                       to="/cart"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Mon Panier
+                      Votre Panier
                     </Link>
                     <Link
                       onClick={() => setMobileMenuOpen(false)}
                       to={`/profile/${userId}`}
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Mon compte
+                      Espace client
                     </Link>
                     {role === 'true' && (
                       <Link
@@ -211,7 +211,7 @@ export default function Example() {
                         to="/dashboard"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >
-                        Tableau de bord administrateur
+                        Admin
                       </Link>
                     )}
                     <div onClick={() => setMobileMenuOpen(false)}>

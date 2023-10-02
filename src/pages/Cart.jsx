@@ -85,8 +85,8 @@ const Cart = () => {
 
 
   return (
-    <div className="pt-10 pb-10">
-      <h2 className="mb-10 text-center">Panier</h2>
+    <section className="panier pt-12 pb-10">
+      <h2 className="mb-10 text-center text-5xl font-bold">Panier</h2>
       <div className="mx-auto max-w-5xl text-center justify-center px-6 md:flex md:space-x-6 xl:px-0">
         {Items.length === 0 ? (
           <>
@@ -100,7 +100,7 @@ const Cart = () => {
                 <div key={item.id} className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
                   <img
                     src={item.item.imageUrl}
-                    alt="product-image"
+                    alt="Image d'un produit en vente par Inforomu"
                     className="w-full rounded-lg sm:w-40"
                   />
                   <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
@@ -153,7 +153,7 @@ const Cart = () => {
           </>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
