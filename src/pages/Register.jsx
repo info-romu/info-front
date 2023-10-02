@@ -149,7 +149,7 @@ const Registrer = () => {
   return (
     <section className='section_form'>
       <div className='box'>
-        <h2>Inscription</h2>
+        <h2 className=' text-neutral-50 text-5xl mb-5'>Inscription</h2>
         <form className='box_form' onSubmit={handleSubmit}>
           {error && (
             <div className="alert" role="alert">

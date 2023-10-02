@@ -30,59 +30,59 @@ export default function Realisation() {
     };
 
     return (
-        <section>
+        <section className='real'>
             <div className='title-real'>
-            <h2 className='mb-10 text-center md:ms-5'>Nos Réalisations</h2>
+            <h2 className='mb-10 text-center text-5xl font-bold md:ms-5'>Nos Réalisations</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:m-5">
                 <div className="grid gap-5">
                     <div className='real_card' onClick={() => openPopup(inforomu1)}>
-                        <img className="real_card_img rounded-lg" src={inforomu1} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu1} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu2)}>
-                        <img className="real_card_img rounded-lg" src={inforomu2} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu2} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu3)}>
-                        <img className="real_card_img rounded-lg" src={inforomu3} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu3} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                 </div>
                 <div className="grid gap-5">
                     <div className='real_card' onClick={() => openPopup(inforomu6)}>
-                        <img className="real_card_img rounded-lg" src={inforomu6} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu6} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu5)}>
-                        <img className="real_card_img rounded-lg" src={inforomu5} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu5} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu4)}>
-                        <img className="real_card_img rounded-lg" src={inforomu4} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu4} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                 </div>
                 <div className="grid gap-5">
                     <div className='real_card' onClick={() => openPopup(inforomu7)}>
-                        <img className="real_card_img rounded-lg" src={inforomu7} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu7} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu8)}>
-                        <img className="real_card_img rounded-lg" src={inforomu8} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu8} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu13)}>
-                        <img className="real_card_img rounded-lg" src={inforomu13} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu13} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                 </div>
                 <div className="grid gap-5">
                     <div className='real_card' onClick={() => openPopup(inforomu10)}>
-                        <img className="real_card_img rounded-lg" src={inforomu10} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu10} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu12)}>
-                        <img className="real_card_img rounded-lg" src={inforomu12} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu12} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                     <div className='real_card' onClick={() => openPopup(inforomu11)}>
-                        <img className="real_card_img rounded-lg" src={inforomu11} alt="" />
+                        <img className="real_card_img rounded-lg" src={inforomu11} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                     </div>
                 </div>
                 {popupImage && (
                     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-75">
                         <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                            <img className="ms:max-w-screen-md" src={popupImage} alt="Popup Image" />
+                            <img className="ms:max-w-screen-md" src={popupImage} alt="photo d'une installation d'une borne de recharge pour voiture éléctrique faite par Inforomu" />
                             <button
                                 className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none bg-red-500 rounded-lg"
                                 onClick={closePopup}

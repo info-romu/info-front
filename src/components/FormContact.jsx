@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import config from '../../config';
-import AlertEmailSent from "../components/AlertEmailSent";
 
-export default function FormContact () {
+export default function FormContact() {
 
   const [nomPrenom, setNomPrenom] = useState('');
   const [nomSociete, setNomSociete] = useState('');
@@ -11,7 +10,6 @@ export default function FormContact () {
   const [typeCompteur, setTypeCompteur] = useState('');
   const [demande, setDemande] = useState('');
 
-  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +33,6 @@ export default function FormContact () {
       });
 
       if (response.ok) {
-        setShowAlert(true); 
         console.log('Mail envoyé avec succès');
         setNomPrenom('')
         setNomSociete('')
@@ -54,13 +51,15 @@ export default function FormContact () {
   return (
     <div className='page-container'>
       <div className="container">
-      <h2 className="mb-10 m-6 text-center">Contactez-nous</h2>
+        <h2 className="text-5xl text-center">
+          Contactez-nous
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="input-data">
               <input type="text" required value={nomPrenom} onChange={(e) => setNomPrenom(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">Nom & Prénom</label>
+              <label htmlFor="">Nom & prénom</label>
             </div>
             <div className="input-data">
               <input type="text" required value={nomSociete} onChange={(e) => setNomSociete(e.target.value)} />
@@ -72,12 +71,12 @@ export default function FormContact () {
             <div className="input-data">
               <input type="text" required value={mail} onChange={(e) => setMail(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">E-mail</label>
+              <label htmlFor="">Email</label>
             </div>
             <div className="input-data">
               <input type="text" required value={numTelephone} onChange={(e) => setNumTelephone(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">Numéro de téléphone</label>
+              <label htmlFor="">Numero de telephone</label>
             </div>
             <div className="input-data">
               <select className="custom-dropdown" required value={typeCompteur} onChange={(e) => setTypeCompteur(e.target.value)}>
@@ -103,7 +102,6 @@ export default function FormContact () {
                   <button type="submit" className='submit-btn'>Envoyer</button>
                 </div>
               </div>
-              <AlertEmailSent showAlert={showAlert} setShowAlert={setShowAlert} />
             </div>
           </div>
         </form>

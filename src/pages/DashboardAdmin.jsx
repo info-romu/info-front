@@ -86,13 +86,13 @@ export default function DashboardAdmin() {
 
     return (
         <>
-            <h2 className="mb-10 m-6">Tableau de bord administrateur</h2>
+            <h2 className="text-5xl pt-12 text-center">DashboardAdmin</h2>
             <section className="flex flex-col items-center mt-8 p-1 xl:flex-row xl:items-start xl:justify-center">
                 <div className="w-full md:w-2/4 xl:w-1/4 my-8">
                     <h3>Ajouter un produit</h3>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-6">
-                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom du produit :</label>
+                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom du produit</label>
                             <input
                                 type="text"
                                 id="name"
@@ -105,7 +105,7 @@ export default function DashboardAdmin() {
                             />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description du produit :</label>
+                            <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
                             <textarea id="description" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Mettez votre description"
                                 onChange={handleDescriptionChange}
@@ -115,7 +115,7 @@ export default function DashboardAdmin() {
                             </textarea>
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix du produit :</label>
+                            <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix du produit</label>
                             <input
                                 type="number"
                                 id="price"
@@ -128,7 +128,7 @@ export default function DashboardAdmin() {
                             />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="imageUrl" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Url de l'image du produit :</label>
+                            <label htmlFor="imageUrl" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Url de l'image du produit</label>
                             <input
                                 type="text"
                                 id="imageUrl"
@@ -144,15 +144,15 @@ export default function DashboardAdmin() {
                             type="submit"
                             className="bg-green-500 w-1/2 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded"
                         >
-                            Ajouter sur la boutique
+                            Ajouter
                         </button>
                     </form>
                 </div>
                 <div className="w-full md:w-4/5 xl:w-3/5 text-center">
-                    <h3>Les produits en ventes</h3>
+                    <h3>Les Produits En Ventes</h3>
                     <div className="flex flex-col items-center justify-center md:w-full">
                         {items.map((item) => (
-                            <div key={item.id} className="w-full md:w-4/5 my-5 h-87 md:h-52 max-h-screen flex flex-col md:flex-row bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div key={item.id} className="w-full md:w-4/5 my-5 h-87 md:h-72 xl:h-64  max-h-screen flex flex-col md:flex-row bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <img
                                     className="object-cover  md:w-1/4 md:h-auto rounded-t-lg md:rounded-none md:rounded-l-lg"
                                     src={item.imageUrl}

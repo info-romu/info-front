@@ -1,22 +1,16 @@
 .container_presentation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 30rem;
     position: relative;
-  
     .container_presentation_text {
         position: absolute;
         font-family: 'openBold';
         width: 100%;
-        top: 25%;
         left: 50%;
         letter-spacing: .2rem;
         transform: translate(-50%, -50%);
         text-align: center;
         color: rgb(0, 0, 0);
-        text-shadow: 1px 1px 28px black;
+        text-shadow: 1px 1px 28px rgba(0, 0, 0, 0.642);
         border-radius: 5px;
         z-index: 1;
         animation: text-focus-in .9s ease-in-out both;
@@ -33,32 +27,25 @@
   
     .container_presentation_img {
         mask-image: linear-gradient(#ffffff, transparent);
-        width: 100%;
-        height: 400px;
-        object-fit: fill;
     }
 }
   
 .container_description {
     .container_top_text {
-        font-size: 1.8rem;
         font-family: 'openBold';
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 3.2rem;
         background: rgb(0, 195, 72);
         background: linear-gradient(188deg, rgb(0, 192, 70) 0%, rgba(0, 215, 49, 1) 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: 100%;
-        width: 100%;
         text-shadow: 2px 2px 28px (rgb(0, 0, 0));
     }
   
     .container_top_text2 {
-        font-size: 1.8rem;
         font-family: 'openBold';
         color: rgb(0, 0, 0);
         text-shadow: 2px 2px 28px (rgb(34, 168, 0));
