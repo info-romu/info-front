@@ -62,7 +62,7 @@ export default function FormContact() {
             <div className="input-data">
               <input type="text" required value={nomPrenom} onChange={(e) => setNomPrenom(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">Nom & prénom</label>
+              <label htmlFor="">Nom & Prénom</label>
             </div>
             <div className="input-data">
               <input type="text" required value={nomSociete} onChange={(e) => setNomSociete(e.target.value)} />
@@ -74,12 +74,12 @@ export default function FormContact() {
             <div className="input-data">
               <input type="text" required value={mail} onChange={(e) => setMail(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">Email</label>
+              <label htmlFor="">E-mail</label>
             </div>
             <div className="input-data">
               <input type="text" required value={numTelephone} onChange={(e) => setNumTelephone(e.target.value)} />
               <div className="underline"></div>
-              <label htmlFor="">Numero de telephone</label>
+              <label htmlFor="">Numéro de téléphone</label>
             </div>
             <div className="input-data">
               <select className="custom-dropdown" required value={typeCompteur} onChange={(e) => setTypeCompteur(e.target.value)}>
