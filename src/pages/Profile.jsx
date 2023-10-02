@@ -84,10 +84,10 @@ export default function Profile() {
             <p className="sidebar_profile_username font-semibold">{profile.username}</p>
           </div>
           <div className="sidebar_details flex flex-col">
-            <p className=" font-semibold text-lg">Details</p>
+            <p className=" font-semibold text-lg">Mes informations :</p>
             <hr />
-            <p className="mt-2"><span className="font-semibold">username :</span> {profile.username}</p>
-            <p><span className=" font-semibold">Email :</span> {profile.email}</p>
+            <p className="mt-2"><span className="font-semibold">Username :</span> {profile.username}</p>
+            <p><span className=" font-semibold">E-mail :</span> {profile.email}</p>
             <Link className=" font-semibold hover:underline hover:underline-offset-2" to="#">Modifier mes informations</Link>
             <Link className=" font-semibold hover:underline hover:underline-offset-2" to="#">Modifier mon mot de passe</Link>
             <ul>
@@ -105,7 +105,7 @@ export default function Profile() {
                 />
               </li>
             </ul>
-            <button onClick={handleRemoveAccount} className="font-semibold bg-red-600 rounded w-5/6">Supprimer mon Compte</button>
+            <button onClick={handleRemoveAccount} className="font-semibold bg-red-600 rounded w-5/6">Supprimer mon compte</button>
           </div>
         </aside>
         <div className="dashboard_content_container">

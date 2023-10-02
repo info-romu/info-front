@@ -32,7 +32,7 @@ export default function Realisation() {
     return (
         <section className='real'>
             <div className='title-real'>
-            <h2 className='mb-10 text-center text-5xl font-bold md:ms-5'>Nos Réalisations</h2>
+            <h2 className='mb-10 text-center text-5xl font-bold md:ms-5'>Nos réalisations</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:m-5">
                 <div className="grid gap-5">
