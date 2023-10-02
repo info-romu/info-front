@@ -32,4 +32,5 @@ const AlertEmailSent = ({ showAlert, setShowAlert }) => {
   );
 };
 
+
 export default AlertEmailSent;
